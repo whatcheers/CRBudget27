@@ -16,7 +16,9 @@ import {
   MessageSquare,
   Home as HomeIcon,
   Building,
-  Factory
+  Factory,
+  Sparkles,
+  ArrowRight
 } from 'lucide-react';
 import {
   PieChart,
@@ -101,7 +103,11 @@ const Card = ({ children, className = '' }: any) => (
   </motion.div>
 );
 
-export default function Home({ onSelectDept }: { onSelectDept: (id: string) => void, key?: string }) {
+export default function Home({ onSelectDept, onShowHighlights }: {
+  onSelectDept: (id: string) => void,
+  onShowHighlights: () => void,
+  key?: string,
+}) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -123,6 +129,14 @@ export default function Home({ onSelectDept }: { onSelectDept: (id: string) => v
             <p className="max-w-2xl text-lg font-light leading-relaxed text-emerald-100 md:text-xl">
               Overview of the Fiscal Year 2027 Budget for the City of Cedar Rapids, outlining allocations across general operations, enterprise funds, and capital improvements.
             </p>
+            <button
+              onClick={onShowHighlights}
+              className="group mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-300/40 bg-white/10 px-5 py-2.5 text-sm font-bold uppercase tracking-wider text-white backdrop-blur transition-colors hover:bg-white/20"
+            >
+              <Sparkles size={16} className="text-emerald-300" />
+              What's New in FY27
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
+            </button>
           </div>
           <div className="min-w-[280px] rounded-3xl border border-white/20 bg-white/10 p-8 text-center shadow-2xl backdrop-blur-lg">
             <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-emerald-200">

@@ -82,12 +82,7 @@ export default function DepartmentDetail({
             <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[2rem] text-center shadow-2xl min-w-[280px]">
               <p className="text-white/80 text-xs font-bold uppercase tracking-widest mb-3">Total Department Budget</p>
               <p className="text-6xl font-black text-white tracking-tight">${dept.budget}<span className="text-3xl text-white/70">M</span></p>
-              <div className="mt-6 flex flex-col gap-3">
-                <div className="flex items-center justify-between text-sm bg-black/20 rounded-xl px-4 py-3">
-                  <span className="text-white/70 font-medium">Full-Time Equivalent</span>
-                  <span className="font-bold flex items-center gap-2"><Users size={16} className="text-white/60"/> {dept.ftes}</span>
-                </div>
-              </div>
+              <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-white/70">{dept.fundType}</p>
             </div>
           </div>
         </div>

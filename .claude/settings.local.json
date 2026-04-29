@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm install *)",
+      "Bash(grep -n -B1 -A3 \"^Police$\" book/clean.txt)",
+      "Bash(node *)",
+      "Bash(git check-ignore *)",
+      "Bash(node scripts/build-data.mjs)",
+      "Read(//tmp/**)",
+      "Bash(git config *)",
+      "Bash(git checkout *)",
+      "Bash(sed -n '8,15p' src/data.ts)",
+      "Bash(sed -n '1438,1443p' src/data.ts)",
+      "Bash(npx tsc *)",
+      "Bash(awk '/id: .water./,/^  \\\\},/' Z:/Apps/playground/CRBudget27/src/data.ts)",
+      "Bash(awk \"/id: 'wpc'/,/^  \\\\},/\" Z:/Apps/playground/CRBudget27/src/data.ts)",
+      "Bash(awk \"/id: 'publicWorks'/,/^  \\\\},/\" Z:/Apps/playground/CRBudget27/src/data.ts)",
+      "Bash(awk \"/id: 'parks'/,/^  \\\\},/\" Z:/Apps/playground/CRBudget27/src/data.ts)",
+      "Bash(awk \"/id: 'transit'/,/^  \\\\},/\" Z:/Apps/playground/CRBudget27/src/data.ts)"
+    ]
+  }
+}
