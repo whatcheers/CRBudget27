@@ -151,6 +151,15 @@ const infographicStory = [
   { label: 'Utility Capacity', value: '$131.5M', note: 'Water + WPC flagship projects', color: 'bg-cyan-500' },
 ];
 
+
+const infographicTopCIP = [
+  { name: 'WPC', value: 106.7 },
+  { name: 'Flood Ctrl', value: 70.6 },
+  { name: 'Water Sys', value: 48.0 },
+  { name: 'Streets', value: 39.2 },
+  { name: 'Airport', value: 38.9 },
+];
+
 // ---------------- Reusable bits ----------------
 
 const SectionHeader = ({ title, subtitle, icon: Icon }: any) => (
@@ -287,16 +296,16 @@ export default function Home({ onSelectDept, onShowHighlights }: {
 
         {/* ---------- Executive Infographic ---------- */}
         <Card className="overflow-hidden border-emerald-200 bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-900 text-white">
-          <div className="mb-6 flex flex-wrap items-end justify-between gap-4 border-b border-white/20 pb-5">
+          <div className="mb-6 flex flex-wrap items-start justify-between gap-4 border-b border-white/20 pb-5">
             <div>
               <p className="text-xs font-bold uppercase tracking-[0.25em] text-emerald-300">Executive Snapshot</p>
-              <h3 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">FY27 Budget Infographic</h3>
+              <h3 className="mt-2 text-2xl font-black tracking-tight sm:text-3xl md:text-4xl">FY27 Budget Infographic</h3>
               <p className="mt-2 max-w-2xl text-sm text-emerald-100/90">The city's biggest budget moves in one view: core services, major construction, and resident impact.</p>
             </div>
             <button
               type="button"
               onClick={onShowHighlights}
-              className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-wider transition hover:bg-white/20"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-wider transition hover:bg-white/20 sm:w-auto"
             >
               Resident Guide <ChevronRight size={14} />
             </button>
@@ -325,24 +334,26 @@ export default function Home({ onSelectDept, onShowHighlights }: {
 
             <div className="rounded-2xl bg-white p-4 text-slate-900">
               <p className="mb-2 text-xs font-bold uppercase tracking-wider text-slate-500">Capital Projects ($M)</p>
-              <div className="h-[220px]">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={totalCIPData.slice(0, 5)} margin={{ top: 8, right: 8, left: -20, bottom: 0 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
-                    <XAxis dataKey="name" tick={{ fontSize: 10 }} interval={0} angle={-20} textAnchor="end" height={55} />
-                    <YAxis tickFormatter={(v) => `$${v}`} tick={{ fontSize: 10 }} />
-                    <Tooltip formatter={(v: number) => [`$${v}M`, 'CIP']} />
-                    <Bar dataKey="value" radius={[8, 8, 0, 0]}>
-                      {totalCIPData.slice(0, 5).map((entry, i) => <Cell key={entry.name} fill={['#0ea5e9', '#14b8a6', '#22c55e', '#f59e0b', '#f97316'][i]} />)}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
+              <div className="overflow-x-auto">
+                <div className="h-[220px] min-w-[320px]">
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart data={infographicTopCIP} margin={{ top: 8, right: 8, left: -16, bottom: 0 }}>
+                      <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                      <XAxis dataKey="name" tick={{ fontSize: 10 }} interval={0} />
+                      <YAxis tickFormatter={(v) => `$${v}`} tick={{ fontSize: 10 }} />
+                      <Tooltip formatter={(v: number) => [`$${v}M`, 'CIP']} />
+                      <Bar dataKey="value" radius={[8, 8, 0, 0]}>
+                        {infographicTopCIP.map((entry, i) => <Cell key={entry.name} fill={['#0ea5e9', '#14b8a6', '#22c55e', '#f59e0b', '#f97316'][i]} />)}
+                      </Bar>
+                    </BarChart>
+                  </ResponsiveContainer>
+                </div>
               </div>
             </div>
 
             <div className="rounded-2xl bg-white/10 p-5 backdrop-blur">
               <p className="text-xs font-semibold uppercase tracking-widest text-emerald-200">Resident Impact</p>
-              <div className="mt-3 grid grid-cols-2 gap-3">
+              <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div className="rounded-xl bg-black/20 p-3">
                   <p className="text-[11px] uppercase tracking-wider text-emerald-100">Typical Home</p>
                   <p className="text-2xl font-black text-white">-$97</p>
