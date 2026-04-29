@@ -144,6 +144,13 @@ const iowaUtilityComparison = [
   { city: 'Iowa City',           rate: 130.69 },
 ];
 
+
+const infographicStory = [
+  { label: 'Public Safety', value: '$79.3M', note: 'Police + Fire = 44% of General Fund', color: 'bg-rose-500' },
+  { label: 'Infrastructure', value: '$109.8M', note: 'Flood control + street improvements', color: 'bg-amber-500' },
+  { label: 'Utility Capacity', value: '$131.5M', note: 'Water + WPC flagship projects', color: 'bg-cyan-500' },
+];
+
 // ---------------- Reusable bits ----------------
 
 const SectionHeader = ({ title, subtitle, icon: Icon }: any) => (
@@ -276,6 +283,83 @@ export default function Home({ onSelectDept, onShowHighlights }: {
             delay={0.2}
           />
         </div>
+
+
+        {/* ---------- Executive Infographic ---------- */}
+        <Card className="overflow-hidden border-emerald-200 bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-900 text-white">
+          <div className="mb-6 flex flex-wrap items-end justify-between gap-4 border-b border-white/20 pb-5">
+            <div>
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-emerald-300">Executive Snapshot</p>
+              <h3 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">FY27 Budget Infographic</h3>
+              <p className="mt-2 max-w-2xl text-sm text-emerald-100/90">The city's biggest budget moves in one view: core services, major construction, and resident impact.</p>
+            </div>
+            <button
+              type="button"
+              onClick={onShowHighlights}
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-wider transition hover:bg-white/20"
+            >
+              Resident Guide <ChevronRight size={14} />
+            </button>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+            <div className="rounded-2xl bg-white/10 p-5 backdrop-blur">
+              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-200">General Fund</p>
+              <p className="mt-1 text-4xl font-black">$178.6M</p>
+              <p className="mt-3 text-sm text-emerald-100">Levy remains <span className="font-bold text-white">unchanged at $16.6562</span> per $1,000 taxable value.</p>
+              <div className="mt-4 space-y-3">
+                {infographicStory.map((item) => (
+                  <div key={item.label}>
+                    <div className="mb-1 flex items-center justify-between text-xs">
+                      <span className="font-semibold text-white">{item.label}</span>
+                      <span className="font-bold text-emerald-200">{item.value}</span>
+                    </div>
+                    <div className="h-2 overflow-hidden rounded-full bg-white/20">
+                      <div className={`h-full ${item.color}`} style={{ width: `${(Number(item.value.replace(/[$M]/g, '')) / 178.6) * 100}%` }} />
+                    </div>
+                    <p className="mt-1 text-[11px] text-emerald-100/80">{item.note}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-white p-4 text-slate-900">
+              <p className="mb-2 text-xs font-bold uppercase tracking-wider text-slate-500">Capital Projects ($M)</p>
+              <div className="h-[220px]">
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart data={totalCIPData.slice(0, 5)} margin={{ top: 8, right: 8, left: -20, bottom: 0 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
+                    <XAxis dataKey="name" tick={{ fontSize: 10 }} interval={0} angle={-20} textAnchor="end" height={55} />
+                    <YAxis tickFormatter={(v) => `$${v}`} tick={{ fontSize: 10 }} />
+                    <Tooltip formatter={(v: number) => [`$${v}M`, 'CIP']} />
+                    <Bar dataKey="value" radius={[8, 8, 0, 0]}>
+                      {totalCIPData.slice(0, 5).map((entry, i) => <Cell key={entry.name} fill={['#0ea5e9', '#14b8a6', '#22c55e', '#f59e0b', '#f97316'][i]} />)}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            <div className="rounded-2xl bg-white/10 p-5 backdrop-blur">
+              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-200">Resident Impact</p>
+              <div className="mt-3 grid grid-cols-2 gap-3">
+                <div className="rounded-xl bg-black/20 p-3">
+                  <p className="text-[11px] uppercase tracking-wider text-emerald-100">Typical Home</p>
+                  <p className="text-2xl font-black text-white">-$97</p>
+                  <p className="text-[11px] text-emerald-100/80">Annual tax change</p>
+                </div>
+                <div className="rounded-xl bg-black/20 p-3">
+                  <p className="text-[11px] uppercase tracking-wider text-emerald-100">Utilities</p>
+                  <p className="text-2xl font-black text-white">+$7.90</p>
+                  <p className="text-[11px] text-emerald-100/80">Monthly change</p>
+                </div>
+              </div>
+              <div className="mt-4 rounded-xl border border-white/20 bg-white/5 p-3 text-xs text-emerald-100">
+                Cedar Rapids remains below Des Moines and Dubuque on monthly utility cost while funding major long-term infrastructure.
+              </div>
+            </div>
+          </div>
+        </Card>
 
         {/* ---------- Where Every Dollar Goes ---------- */}
         <Card>
