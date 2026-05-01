@@ -3,21 +3,28 @@ import { AnimatePresence } from 'motion/react';
 import Home from './Home';
 import DepartmentDetail from './DepartmentDetail';
 import Highlights from './Highlights';
+import Surveillance from './Surveillance';
 
 type View =
   | { kind: 'home' }
   | { kind: 'highlights' }
+  | { kind: 'surveillance' }
   | { kind: 'detail', deptId: string };
 
+const BASE = '/budget';
+
 const viewToPath = (v: View): string => {
-  if (v.kind === 'home') return '/';
-  if (v.kind === 'highlights') return '/highlights';
-  return `/dept/${v.deptId}`;
+  if (v.kind === 'home') return `${BASE}/`;
+  if (v.kind === 'highlights') return `${BASE}/highlights`;
+  if (v.kind === 'surveillance') return `${BASE}/surveillance`;
+  return `${BASE}/dept/${v.deptId}`;
 };
 
 const pathToView = (path: string): View => {
-  if (path === '/highlights') return { kind: 'highlights' };
-  const m = /^\/dept\/([^/]+)$/.exec(path);
+  const p = path.replace(BASE, '') || '/';
+  if (p === '/highlights') return { kind: 'highlights' };
+  if (p === '/surveillance') return { kind: 'surveillance' };
+  const m = /^\/dept\/([^/]+)$/.exec(p);
   if (m) return { kind: 'detail', deptId: decodeURIComponent(m[1]) };
   return { kind: 'home' };
 };
@@ -63,6 +70,7 @@ export default function App() {
           key="home"
           onSelectDept={(deptId) => navigate({ kind: 'detail', deptId })}
           onShowHighlights={() => navigate({ kind: 'highlights' })}
+          onShowSurveillance={() => navigate({ kind: 'surveillance' })}
         />
       )}
       {view.kind === 'highlights' && (
@@ -70,6 +78,12 @@ export default function App() {
           key="highlights"
           onBack={() => window.history.back()}
           onSelectDept={(deptId) => navigate({ kind: 'detail', deptId })}
+        />
+      )}
+      {view.kind === 'surveillance' && (
+        <Surveillance
+          key="surveillance"
+          onBack={() => window.history.back()}
         />
       )}
       {view.kind === 'detail' && (

@@ -22,6 +22,7 @@ import {
   Receipt,
   Hammer,
   ChevronRight,
+  Eye,
 } from 'lucide-react';
 import {
   PieChart,
@@ -192,9 +193,10 @@ const KpiTile = ({
 
 // ---------------- Main ----------------
 
-export default function Home({ onSelectDept, onShowHighlights }: {
+export default function Home({ onSelectDept, onShowHighlights, onShowSurveillance }: {
   onSelectDept: (id: string) => void,
   onShowHighlights: () => void,
+  onShowSurveillance: () => void,
   key?: string,
 }) {
   // Dept directory: every entry in DEPARTMENTS that has a budget, sorted big → small
@@ -333,6 +335,18 @@ export default function Home({ onSelectDept, onShowHighlights }: {
                 </button>
               );
             })}
+            <button
+              type="button"
+              onClick={onShowSurveillance}
+              className="flex flex-col items-start rounded-xl border-2 border-red-700 bg-red-50 p-3 text-left transition-colors hover:border-red-900 hover:bg-red-100"
+            >
+              <span className="mb-2 inline-flex h-8 w-8 items-center justify-center rounded-lg bg-red-700 text-white shadow-sm">
+                <Eye size={15} />
+              </span>
+              <span className="text-xs font-semibold text-slate-700">Surveillance</span>
+              <span className="text-sm font-black text-red-700">$499K</span>
+              <span className="text-[10px] font-medium uppercase tracking-widest text-slate-400">Flock ALPR</span>
+            </button>
           </div>
         </Card>
 
