@@ -32,7 +32,39 @@ export const DEPARTMENTS = {
       { name: 'Facilities/Rent', value: 1.15 },
       { name: 'Insurance', value: 0.81 },
       { name: 'Other', value: 1.98 }
-    ]
+    ],
+    supplementalFY27: {
+      totalExpenditures: 52.43,
+      totalRevenues: 11.89,
+      generalFundGap: 40.54,
+      revenueSources: [
+        { name: 'Court Fines & Forfeits (incl. traffic camera)', value: 6.28 },
+        { name: 'Operating Transfer In', value: 4.39 },
+        { name: 'Local Govt Grants & Reimb (school resource officers)', value: 0.88 },
+        { name: 'Charges for Services (towing, alarms)', value: 0.31 },
+        { name: 'Licenses & Permits', value: 0.02 }
+      ],
+      expenditureBuckets: [
+        { name: 'People (Personal Services)', value: 40.66, share: 78 },
+        { name: 'Discretionary (software, training, supplies)', value: 6.80, share: 13 },
+        { name: 'Fleet, Facilities & Insurance', value: 4.96, share: 9 }
+      ],
+      didYouKnow: [
+        { label: 'Other Professional Services', value: '$1.59M', sub: 'Outside specialists, technical contracts' },
+        { label: 'City Fleet Rental', value: '$1.32M', sub: 'Squad cars and fleet equipment' },
+        { label: 'Computer Software', value: '$488K', sub: 'CAD, records, evidence systems' },
+        { label: 'Vehicle Insurance', value: '$394K', sub: 'Insuring the entire patrol fleet' },
+        { label: 'Gasoline Fuel', value: '$380K', sub: 'Powering daily patrol operations' },
+        { label: 'Ammunition & Firearms', value: '$110K', sub: 'Duty rounds, training, range supplies' }
+      ],
+      notableChanges: [
+        { name: 'Traffic Camera Fines Revenue', delta: '+$1.81M', note: 'biggest revenue increase, +41%' },
+        { name: 'Personal Services', delta: '+$1.89M', note: 'wages, benefits, retirement contributions' },
+        { name: 'Other Professional Services', delta: '+$369K', note: 'outside contracted expertise' },
+        { name: 'City Fleet Rental Charges', delta: '−$431K', note: 'fleet rate change' },
+        { name: 'Health Services', delta: '−$106K', note: 'right-sized to historical use' }
+      ]
+    }
   },
   fire: {
     id: 'fire',
@@ -61,7 +93,39 @@ export const DEPARTMENTS = {
       { name: 'Health & Ins', value: 0.77 },
       { name: 'Facilities/Rent', value: 0.52 },
       { name: 'Other', value: 0.92 }
-    ]
+    ],
+    supplementalFY27: {
+      totalExpenditures: 26.86,
+      totalRevenues: 3.69,
+      generalFundGap: 23.18,
+      revenueSources: [
+        { name: 'Operating Transfer In', value: 2.51 },
+        { name: 'Protective Inspection Fees', value: 0.73 },
+        { name: 'Special Fire Services', value: 0.45 },
+        { name: 'Other (sales, misc)', value: 0.002 }
+      ],
+      expenditureBuckets: [
+        { name: 'People (Personal Services)', value: 23.67, share: 88 },
+        { name: 'Fleet, Facilities & Insurance', value: 2.36, share: 9 },
+        { name: 'Discretionary (training, supplies, services)', value: 0.83, share: 3 }
+      ],
+      didYouKnow: [
+        { label: 'Health Services', value: '$500K', sub: 'Firefighter physicals & wellness exams' },
+        { label: 'Routine City Fleet Charges', value: '$666K', sub: 'Maintaining engines, ladders, ambulances' },
+        { label: 'City Fleet Rental', value: '$195K', sub: 'Apparatus rental costs' },
+        { label: 'Diesel Fuel', value: '$110K', sub: 'Powering fire trucks and apparatus' },
+        { label: 'Other Professional Services', value: '$134K', sub: 'Outside specialists & technical contracts' },
+        { label: 'Personal Protective Gear', value: '$33K', sub: 'Turnout gear, masks, safety equipment' }
+      ],
+      notableChanges: [
+        { name: 'Personal Services', delta: '+$1.30M', note: 'wages and benefit costs, +6%' },
+        { name: 'Health Services', delta: '+$200K', note: 'expanded firefighter health program' },
+        { name: 'Routine City Fleet Charges', delta: '+$100K', note: 'apparatus maintenance costs' },
+        { name: 'Other Professional Services', delta: '+$40K', note: 'specialty contracts' },
+        { name: 'Diesel Fuel', delta: '+$33K', note: 'fuel cost adjustment' },
+        { name: 'Liability Insurance', delta: '−$30K', note: 'rate decrease' }
+      ]
+    }
   },
   publicWorks: {
     id: 'publicWorks',
@@ -91,7 +155,37 @@ export const DEPARTMENTS = {
       { name: 'Facilities/Rent', value: 0.94 },
       { name: 'Inter Dept', value: 0.71 },
       { name: 'Other', value: 0.47 }
-    ]
+    ],
+    supplementalFY27: {
+      totalExpenditures: 28.24,
+      totalRevenues: 22.94,
+      generalFundGap: 5.31,
+      revenueSources: [
+        { name: 'Road Use Tax Transfer', value: 17.22 },
+        { name: 'Internal Charges (City Mgr Dept)', value: 5.35 },
+        { name: 'Intergov & Permits', value: 0.23 },
+        { name: 'Other (sales, damage, fees)', value: 0.14 }
+      ],
+      expenditureBuckets: [
+        { name: 'People (Personal Services)', value: 19.50, share: 69 },
+        { name: 'Fleet & Operations', value: 6.43, share: 23 },
+        { name: 'Materials & Supplies', value: 2.31, share: 8 }
+      ],
+      didYouKnow: [
+        { label: 'Snow & Ice Chemicals', value: '$805K', sub: 'Salt and de-icer for winter ops' },
+        { label: 'Street & Sewer Materials', value: '$1.46M', sub: 'Asphalt, concrete, repair stock' },
+        { label: 'Road Paint Supplies', value: '$110K', sub: 'Lane striping & markings' },
+        { label: 'Sign & Signal Supplies', value: '$118K', sub: 'Traffic signs and signal parts' },
+        { label: 'City Fleet Rental', value: '$2.18M', sub: 'Trucks, plows, heavy equipment' },
+        { label: 'Diesel Fuel', value: '$320K', sub: 'Powering the PW fleet' }
+      ],
+      notableChanges: [
+        { name: 'Road Use Tax Transfer In', delta: '+$440K', note: 'state transportation funding' },
+        { name: 'City Fleet Rental Charges', delta: '+$295K', note: 'fleet rate increase' },
+        { name: 'Snow & Ice Chemical Supplies', delta: '+$72K', note: 'rising chemical costs' },
+        { name: 'Internal Charges (City Mgr Dept)', delta: '−$399K', note: 'lower interdept billing' }
+      ]
+    }
   },
   parks: {
     id: 'parks',
@@ -121,7 +215,39 @@ export const DEPARTMENTS = {
       { name: 'Insurance', value: 0.45 },
       { name: 'Utilities', value: 0.44 },
       { name: 'Other', value: 1.17 }
-    ]
+    ],
+    supplementalFY27: {
+      totalExpenditures: 13.28,
+      totalRevenues: 3.61,
+      generalFundGap: 9.66,
+      revenueSources: [
+        { name: 'Charges for Services (concessions, registration, admission, passes)', value: 1.76 },
+        { name: 'Operating Transfer In', value: 1.23 },
+        { name: 'Rentals (buildings, land, shelters)', value: 0.59 },
+        { name: 'Permits', value: 0.03 }
+      ],
+      expenditureBuckets: [
+        { name: 'People (Personal Services)', value: 9.25, share: 70 },
+        { name: 'Fleet, Facilities & Utilities', value: 2.76, share: 21 },
+        { name: 'Discretionary (programs, supplies)', value: 1.25, share: 9 }
+      ],
+      didYouKnow: [
+        { label: 'Pool Passes & Admissions', value: '$761K', sub: 'Aquatic centers, ice arena, facility access' },
+        { label: 'Program Registration Fees', value: '$510K', sub: 'Youth & adult recreation signups' },
+        { label: 'Concession Sales', value: '$295K', sub: 'Food & drink revenue at parks' },
+        { label: 'Building Rental Revenue', value: '$257K', sub: 'Shelters, lodges, event spaces' },
+        { label: 'City Fleet Rental', value: '$809K', sub: 'Mowers, plows, maintenance vehicles' },
+        { label: 'Pool & Park Chemical Supplies', value: '$116K', sub: 'Chlorine, treatment chemicals' }
+      ],
+      notableChanges: [
+        { name: 'Personal Services', delta: '+$736K', note: 'wages and group insurance, +9%' },
+        { name: 'Group Insurance', delta: '+$207K', note: 'rising health benefit costs' },
+        { name: 'Concession Sales Revenue', delta: '+$38K', note: 'concession growth at parks' },
+        { name: 'City Fleet Rental Charges', delta: '+$32K', note: 'fleet rate change' },
+        { name: 'Property Insurance', delta: '−$64K', note: 'lower premium rates' },
+        { name: "Workers' Compensation", delta: '−$39K', note: 'claims experience' }
+      ]
+    }
   },
   infoTech: {
     id: 'infoTech',

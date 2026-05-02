@@ -11,7 +11,7 @@ import {
   CartesianGrid,
   Cell
 } from 'recharts';
-import { ArrowLeft, Users, Zap, CheckCircle2, Bookmark, Flame, ShieldCheck, Wrench, Leaf, Plane, Bus, Recycle, Droplets, Waves, Building2 } from 'lucide-react';
+import { ArrowLeft, Users, Zap, CheckCircle2, Bookmark, Flame, ShieldCheck, Wrench, Leaf, Plane, Bus, Recycle, Droplets, Waves, Building2, TrendingUp, TrendingDown, Coins, PieChart, Sparkles } from 'lucide-react';
 
 export default function DepartmentDetail({ 
   deptId, 
@@ -21,9 +21,20 @@ export default function DepartmentDetail({
   onBack: () => void,
   key?: string
 }) {
-  const dept = DEPARTMENTS[deptId as keyof typeof DEPARTMENTS];
+  const dept = DEPARTMENTS[deptId as keyof typeof DEPARTMENTS] as (typeof DEPARTMENTS)[keyof typeof DEPARTMENTS] & {
+    supplementalFY27?: {
+      totalExpenditures: number;
+      totalRevenues: number;
+      generalFundGap: number;
+      revenueSources: { name: string; value: number }[];
+      expenditureBuckets: { name: string; value: number; share: number }[];
+      didYouKnow: { label: string; value: string; sub: string }[];
+      notableChanges: { name: string; delta: string; note: string }[];
+    };
+  };
   if (!dept) return null;
   const Icon = dept.icon;
+  const supp = dept.supplementalFY27;
 
   // Extract core services from highlights if they exist
   let coreServicesStr = '';
@@ -183,6 +194,146 @@ export default function DepartmentDetail({
           </motion.div>
         
         </div>
+
+        {supp && (
+          <>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="bg-white p-8 md:p-10 rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100"
+            >
+              <div className="mb-8 flex items-center gap-4">
+                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100" style={{ color: dept.color }}>
+                  <Coins size={24} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Where the Money Comes From</h3>
+                  <p className="text-slate-500 text-sm font-medium">FY27 revenue sources, totaling ${supp.totalRevenues.toFixed(2)}M</p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                {supp.revenueSources.map((r, i) => {
+                  const pct = (r.value / supp.totalRevenues) * 100;
+                  return (
+                    <div key={i}>
+                      <div className="flex justify-between items-baseline mb-2">
+                        <p className="font-semibold text-slate-800">{r.name}</p>
+                        <p className="font-bold tabular-nums text-slate-900">${r.value.toFixed(2)}M <span className="text-slate-400 font-medium text-sm">({pct.toFixed(0)}%)</span></p>
+                      </div>
+                      <div className="h-3 bg-slate-100 rounded-full overflow-hidden">
+                        <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, backgroundColor: dept.color }} />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="mt-8 p-5 rounded-2xl border-2 border-dashed flex items-start gap-3" style={{ borderColor: `${dept.color}40`, backgroundColor: `${dept.color}08` }}>
+                <div className="shrink-0 mt-0.5" style={{ color: dept.color }}>
+                  <TrendingDown size={20} />
+                </div>
+                <div>
+                  <p className="font-bold text-slate-900">${supp.generalFundGap.toFixed(2)}M General Fund Subsidy</p>
+                  <p className="text-slate-600 text-sm leading-relaxed mt-1">
+                    Department revenues (${supp.totalRevenues.toFixed(2)}M) cover most expenses, but the remaining ${supp.generalFundGap.toFixed(2)}M comes from the City's General Fund — supported primarily by property and franchise taxes.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="bg-white p-8 md:p-10 rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100"
+            >
+              <div className="mb-8 flex items-center gap-4">
+                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100" style={{ color: dept.color }}>
+                  <PieChart size={24} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Where the Money Goes</h3>
+                  <p className="text-slate-500 text-sm font-medium">FY27 spending across ${supp.totalExpenditures.toFixed(2)}M total</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                {supp.expenditureBuckets.map((b, i) => (
+                  <div key={i} className="p-6 rounded-2xl border-2 transition-colors" style={{ borderColor: `${dept.color}30`, backgroundColor: `${dept.color}06` }}>
+                    <div className="text-5xl font-black tracking-tight" style={{ color: dept.color }}>{b.share}%</div>
+                    <div className="mt-2 font-bold text-slate-900">{b.name}</div>
+                    <div className="text-slate-500 text-sm font-medium tabular-nums">${b.value.toFixed(2)}M</div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
+              className="bg-white p-8 md:p-10 rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100"
+            >
+              <div className="mb-8 flex items-center gap-4">
+                <div className="p-3 rounded-2xl bg-amber-50 border border-amber-100 text-amber-700">
+                  <Sparkles size={24} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Did You Know?</h3>
+                  <p className="text-slate-500 text-sm font-medium">FY27 line items that keep the City running</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {supp.didYouKnow.map((d, i) => (
+                  <div key={i} className="p-5 rounded-2xl bg-slate-50/70 hover:bg-slate-50 border border-slate-100 transition-colors">
+                    <div className="text-3xl font-black tracking-tight" style={{ color: dept.color }}>{d.value}</div>
+                    <div className="mt-1 font-bold text-slate-900 text-sm">{d.label}</div>
+                    <div className="text-slate-500 text-xs leading-relaxed mt-1">{d.sub}</div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="bg-white p-8 md:p-10 rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100"
+            >
+              <div className="mb-6 flex items-center gap-4">
+                <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100" style={{ color: dept.color }}>
+                  <TrendingUp size={24} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-slate-900 tracking-tight">Notable Budget Changes</h3>
+                  <p className="text-slate-500 text-sm font-medium">Biggest movers in the FY27 adopted budget</p>
+                </div>
+              </div>
+              <div className="divide-y divide-slate-100">
+                {supp.notableChanges.map((c, i) => {
+                  const isUp = c.delta.trim().startsWith('+');
+                  return (
+                    <div key={i} className="flex items-center justify-between gap-4 py-4 first:pt-0 last:pb-0">
+                      <div className="flex-1 min-w-0">
+                        <p className="font-semibold text-slate-800">{c.name}</p>
+                        <p className="text-slate-500 text-xs mt-0.5">{c.note}</p>
+                      </div>
+                      <div
+                        className="shrink-0 px-3 py-1.5 rounded-lg text-sm font-bold tabular-nums flex items-center gap-1.5"
+                        style={{
+                          backgroundColor: isUp ? '#dcfce7' : '#fee2e2',
+                          color: isUp ? '#15803d' : '#b91c1c'
+                        }}
+                      >
+                        {isUp ? <TrendingUp size={14} /> : <TrendingDown size={14} />}
+                        {c.delta}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          </>
+        )}
       </main>
     </motion.div>
   );

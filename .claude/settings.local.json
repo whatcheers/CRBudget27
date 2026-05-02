@@ -17,7 +17,31 @@
       "Bash(awk \"/id: 'wpc'/,/^  \\\\},/\" Z:/Apps/playground/CRBudget27/src/data.ts)",
       "Bash(awk \"/id: 'publicWorks'/,/^  \\\\},/\" Z:/Apps/playground/CRBudget27/src/data.ts)",
       "Bash(awk \"/id: 'parks'/,/^  \\\\},/\" Z:/Apps/playground/CRBudget27/src/data.ts)",
-      "Bash(awk \"/id: 'transit'/,/^  \\\\},/\" Z:/Apps/playground/CRBudget27/src/data.ts)"
+      "Bash(awk \"/id: 'transit'/,/^  \\\\},/\" Z:/Apps/playground/CRBudget27/src/data.ts)",
+      "WebFetch(domain:www.cedar-rapids.org)",
+      "Bash(pdftotext -v)",
+      "Bash(curl -sL \"https://www.cedar-rapids.org/local_government/departments_a_-_f/finance/city_expenditures.php\" -o /tmp/expend.html)",
+      "Bash(curl -sL -o \"claims_2026-04-28.pdf\" \"https://www.cedar-rapids.org/City%20of%20Cedar%20Rapids%20Expenditures%20Approves%204-28-2026.pdf?t=20260429133306525\")",
+      "Bash(curl -sL -o \"claims_2026-04-14.pdf\" \"https://www.cedar-rapids.org/City%20of%20Cedar%20Rapids%20Expenditures%20Approved%2004-14-26.pdf?t=20260415133107694\")",
+      "Bash(curl -sL -o \"claims_2026-03-24.pdf\" \"https://www.cedar-rapids.org/2026_03_24%20Web%20Disbursements.pdf?t=20260325160007415\")",
+      "Bash(curl -sL -o \"FY27_Adopted_Budget_Book.pdf\" \"https://www.cedar-rapids.org/FY27%20Adopted%20Budget%20Book.pdf?t=20260402100425182\")",
+      "Bash(curl -sL -o \"FY27_Adopted_Supplemental.pdf\" \"https://www.cedar-rapids.org/FY27%20Adopted%20Budget%20Book%20-%20Supplemental%20Information.pdf?t=20260402100449805\")",
+      "Bash(curl -sL -o \"Z:/Apps/playground/CRBudget27/book/fy27-adopted/FY27_Adopted_Budget_Book.pdf\" \"https://www.cedar-rapids.org/FY27%20Adopted%20Budget%20Book.pdf?t=20260402100425182\")",
+      "Bash(curl -sL -o \"Z:/Apps/playground/CRBudget27/book/fy27-adopted/FY27_Adopted_Supplemental.pdf\" \"https://www.cedar-rapids.org/FY27%20Adopted%20Budget%20Book%20-%20Supplemental%20Information.pdf?t=20260402100449805\")",
+      "Bash(wait)",
+      "Bash(curl -sL -o \"Z:/Apps/playground/CRBudget27/book/historical/FY26_Adopted.pdf\" \"https://www.cedar-rapids.org/FY%202026%20Adopted%20Budget%20Book.pdf?t=20250619145152608\")",
+      "Bash(curl -sL -o \"Z:/Apps/playground/CRBudget27/book/historical/FY26_Supplemental.pdf\" \"https://www.cedar-rapids.org/FY%202026%20Adopted%20Budget%20Book%20-%20Supplemental.pdf?t=20250404102841876\")",
+      "Bash(curl -sL -o \"Z:/Apps/playground/CRBudget27/book/historical/FY25_Book1.pdf\" \"https://www.cedar-rapids.org/FY%202025%20GFOA%20Book%201.pdf?t=20250224090042102\")",
+      "Bash(curl -sL -o \"Z:/Apps/playground/CRBudget27/book/historical/FY25_Book2.pdf\" \"https://www.cedar-rapids.org/FY%202025%20GFOA%20Book%202.pdf?t=2025022409020169\")",
+      "Bash(curl -sL -o \"Z:/Apps/playground/CRBudget27/book/acfr/ACFR_FY25.pdf\" \"https://www.cedar-rapids.org/ACFR%20FY%202025.pdf?t=20260204150145678\")",
+      "Bash(curl -sL -o \"Z:/Apps/playground/CRBudget27/book/acfr/ACFR_FY24.pdf\" \"https://www.cedar-rapids.org/ACFR%20FY%202024.pdf?t=20260204150520651\")",
+      "Bash(grep -n -A 1 -E \"\\\\\\\\\\\\$[0-9]+\\(\\\\\\\\.[0-9]+\\)?[KM]\" book/sections/water.txt)",
+      "Bash(grep -n -A 1 -E \"\\\\\\\\\\\\$[0-9]+\\(\\\\\\\\.[0-9]+\\)?[KM]\" book/sections/public-works.txt)",
+      "Bash(grep -n -A 1 -E \"\\\\\\\\\\\\$[0-9]+\\(\\\\\\\\.[0-9]+\\)?[KM]\" book/sections/fire.txt)",
+      "Bash(grep -n -A 1 -E \"\\\\\\\\\\\\$[0-9]+\\(\\\\\\\\.[0-9]+\\)?[KM]\" book/sections/police.txt)",
+      "Bash(winget install *)",
+      "Bash(C:/Users/whatcheer/AppData/Local/Microsoft/WinGet/Packages/oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe/poppler-25.07.0/Library/bin/pdftotext.exe -layout -f 77 -l 80 book/fy27-adopted/FY27_Adopted_Supplemental.pdf book/extracted/FY27_PW_supplemental.txt)",
+      "Bash(C:/Users/whatcheer/AppData/Local/Microsoft/WinGet/Packages/oschwartz10612.Poppler_Microsoft.Winget.Source_8wekyb3d8bbwe/poppler-25.07.0/Library/bin/pdftotext.exe -layout book/fy27-adopted/FY27_Adopted_Supplemental.pdf book/extracted/FY27_Supplemental_layout.txt)"
     ]
   }
 }

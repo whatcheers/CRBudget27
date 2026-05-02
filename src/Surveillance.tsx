@@ -53,12 +53,101 @@ const quarterlyStats = [
 
 // Hero KPI
 const heroStats = [
-  { label: 'Contract Cost', value: '$499,250' },
-  { label: 'Fixed ALPR Cameras', value: '70' },
-  { label: 'Alerts in 2025', value: '12,644' },
-  { label: 'Success Rate', value: '3.3%' },
-  { label: 'Data Retention', value: '30 Days*' },
+  { label: 'Contract Total (2 yr)', value: '$499,250' },
+  { label: 'Annual Recurring', value: '$225,000' },
+  { label: 'Cameras (per portal)', value: '75' },
+  { label: 'Plates Read / 30 days', value: '465K' },
+  { label: 'Sharing Network', value: '~310 agencies' },
 ];
+
+// Flock contract line items (from Cedar Rapids IA - LE Proposal 2024.pdf, p. 25)
+const flockContractLines = [
+  { item: 'Flock Safety Platform (FlockOS Essentials + 70 Falcon LPR + 5 Condor PTZ)', kind: 'Annual recurring', cost: 'Bundled', qty: 1, total: 225000 },
+  { item: 'Falcon Standard Implementation Fee', kind: 'One-time', cost: '$650', qty: 70, total: 45500 },
+  { item: 'Condor Standard Implementation Fee', kind: 'One-time', cost: '$750', qty: 5, total: 3750 },
+];
+
+const flockContractTerms = [
+  { label: 'Subscription Term', value: '24 months' },
+  { label: 'Billing Frequency', value: 'Annual — Year 1 invoiced at signing' },
+  { label: 'Payment Terms', value: 'Net 30' },
+  { label: 'Retention Period', value: '30 days' },
+  { label: 'Bill-to Address', value: '505 1st St SW, Cedar Rapids, IA 52404' },
+];
+
+// Flock Transparency Portal — transparency.flocksafety.com/cedar-rapids-ia-pd
+// Captured 2026-05-01 (last-30-days = April 2026)
+const transparencyPortal = {
+  retentionDays: 30,
+  totalCameras: 75,
+  platesRead30d: 465159,
+  hotlistHits30d: 14238,
+  searchSessions30d: 1221,
+  sharingNetworkAgencyCount: 310, // approximate count from full agency list on portal
+  iowaAgencyCount: 60,
+  capturedDate: '2026-05-01',
+  hotlistsAlertedOn: ['NCIC', 'NCMEC Amber Alert'],
+  actionableHotlists: ['Arrest Warrants', 'Missing Persons', 'Stolen Vehicles', 'Stolen License Plates'],
+};
+
+// Federal / multi-state intelligence networks in the CRPD sharing list
+const intelNetworks = [
+  { name: 'Iowa Department of Public Safety', kind: 'State LE' },
+  { name: 'Iowa Department of Corrections', kind: 'State corrections' },
+  { name: 'Indiana Department of Corrections', kind: 'State corrections' },
+  { name: 'Nebraska State Patrol', kind: 'State LE' },
+  { name: 'Ohio State Highway Patrol', kind: 'State LE' },
+  { name: 'Wisconsin Department of Justice', kind: 'State LE' },
+  { name: 'Missouri Information Analysis Center', kind: 'Fusion center (DHS-affiliated)' },
+  { name: 'MOCIC — Mid-States Organized Crime Information Center', kind: 'Multi-state intel network' },
+  { name: 'TN ROCIC — Regional Organized Crime Information Center', kind: 'Multi-state intel network' },
+  { name: 'Texas Financial Crimes Intelligence Center', kind: 'State intel center' },
+  { name: 'Memphis International Airport PD', kind: 'Airport LE' },
+  { name: 'Nashville International Airport PD', kind: 'Airport LE' },
+];
+
+// LPR computer-software-subscription trajectory (Police, FY25-FY27)
+// FY25: $129K calculated from FY26 Adopted p. 64 ("by $96K to $225K"); narrative confirms ~$130K
+// FY26: $225K explicitly named in budget narrative
+// FY27: not broken out in narrative — flagged as unknown
+const lprSubscriptionTrend = [
+  { year: 'FY25 Adopted', amount: 129000, label: '$129K', note: 'baseline (LPR portion)', fill: '#cbd5e1' },
+  { year: 'FY26 Adopted', amount: 225000, label: '$225K', note: '+$96K, "for the license plate reader program"', fill: '#dc2626' },
+  { year: 'FY27 Adopted', amount: 225000, label: '?', note: 'not broken out in narrative', fill: '#e2e8f0' },
+];
+
+// Direct quotes from budget books — exact wording for the reconciliation card
+const lprBudgetQuotes = [
+  {
+    source: 'FY25 Book 1',
+    page: 'p. 64-65',
+    quote: '"Police — $130K — Subscription costs relating to license plate readers"',
+    context: 'New-program addition listed under City Goal — PROTECT CR.',
+  },
+  {
+    source: 'FY26 Adopted',
+    page: 'p. 64',
+    quote: '"An increase in Police Department computer software subscriptions by $96K to $225K for the license plate reader program."',
+    context: 'Citywide budget-changes summary section.',
+  },
+  {
+    source: 'FY26 Adopted',
+    page: 'p. 118',
+    quote: '"Increase in computer software subscriptions by $96K to $368K. This increase provides for $225K in expenses for the license plate reader program."',
+    context: 'Police-section detail. Reveals total Police software-subs = $368K, of which $225K is LPR-specific.',
+  },
+];
+
+// Capital lifecycle items related to video security (FY27)
+const capitalItems = [
+  { project: 'Lifecycle: Video Security System Upgrades at Police', detail: 'Replace video security server hardware & aging cameras at PD', amount: 132500 },
+  { project: 'Lifecycle: Video Security System Upgrades at City Services', detail: 'Replace server hardware & aging cameras at City Services Center', amount: 50000 },
+  { project: 'Mobile Observation Camera Trailer (Public Works, one-time)', detail: 'Listed FY25 Book 1 p. 9518 — equipment, not recurring', amount: null },
+  { project: 'Lifecycle: Video Security System (FY25 historical reference)', detail: 'Single-year capital line in FY25 Book 2', amount: 1000000 },
+];
+
+const fmtUSD = (n: number) => `$${n.toLocaleString()}`;
+const fmtUSDShort = (n: number) => n >= 1000000 ? `$${(n / 1000000).toFixed(2)}M` : `$${(n / 1000).toFixed(0)}K`;
 
 // Camera network breakdown
 const cameraNetwork = [
@@ -161,6 +250,46 @@ export default function Surveillance({ onBack }: Props) {
 
       <main className="max-w-6xl mx-auto px-6 -mt-16 relative z-20 space-y-8">
 
+        {/* Renewal banner */}
+        {(() => {
+          const signed = new Date('2024-06-25');
+          const renewal = new Date(signed);
+          renewal.setMonth(renewal.getMonth() + 24);
+          const today = new Date();
+          const daysUntil = Math.ceil((renewal.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+          const renewalLabel = renewal.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+          const status = daysUntil > 0
+            ? `${daysUntil} day${daysUntil === 1 ? '' : 's'} away`
+            : daysUntil === 0
+              ? 'today'
+              : `${Math.abs(daysUntil)} day${Math.abs(daysUntil) === 1 ? '' : 's'} ago`;
+          return (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="bg-white border-2 border-red-300 rounded-3xl shadow-xl shadow-red-100/50 p-5 md:p-6"
+            >
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                <div className="flex items-start md:items-center gap-4">
+                  <div className="rounded-2xl bg-red-700 text-white px-3 py-2 text-[10px] font-black uppercase tracking-widest flex-shrink-0">
+                    Contract<br />Renewal
+                  </div>
+                  <div>
+                    <p className="text-2xl md:text-3xl font-black text-slate-900 leading-tight">{renewalLabel}</p>
+                    <p className="text-sm text-slate-600 mt-1">
+                      24-month term ends {status}. Original contract approved June 25, 2024 on the Council Consent Agenda.
+                    </p>
+                  </div>
+                </div>
+                <div className="text-right flex-shrink-0">
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-1">Decision point</p>
+                  <p className="text-sm text-slate-700 max-w-xs md:text-right">Renew, renegotiate, or end. No public hearing has been announced.</p>
+                </div>
+              </div>
+            </motion.div>
+          );
+        })()}
+
         {/* Hero Stats */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {heroStats.map((stat, idx) => (
@@ -176,6 +305,32 @@ export default function Surveillance({ onBack }: Props) {
             </motion.div>
           ))}
         </div>
+
+        {/* Scope note */}
+        <Card>
+          <SectionHeader
+            icon={Eye}
+            title="What This Page Covers"
+            subtitle="Surveillance cameras and ALPR — not red-light / speed cameras"
+          />
+          <div className="text-slate-700 space-y-3">
+            <p>
+              Cedar Rapids runs <span className="font-bold">two distinct camera systems</span> that get conflated in public discussion. This page is about the surveillance side.
+            </p>
+            <div className="grid md:grid-cols-2 gap-4 mt-2">
+              <div className="border border-red-200 bg-red-50/40 rounded-2xl p-5">
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-1 text-red-700">This page</p>
+                <p className="font-bold text-slate-900 mb-2">Public Safety Cameras / ALPR (Flock)</p>
+                <p className="text-sm text-slate-700">76 public-safety cameras, 70 with Automated License Plate Reader capability. Operated for CRPD by Flock Safety. Procurement began FY26.</p>
+              </div>
+              <div className="border border-slate-200 bg-slate-50/40 rounded-2xl p-5">
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-1 text-slate-600">Not this page</p>
+                <p className="font-bold text-slate-900 mb-2">Automated Traffic Enforcement (Sensys Gatso)</p>
+                <p className="text-sm text-slate-700">Red-light and speed cameras. Different vendor, different purpose, generates citation revenue. Out of scope here.</p>
+              </div>
+            </div>
+          </div>
+        </Card>
 
         {/* Camera Network Overview */}
         <Card>
@@ -211,6 +366,265 @@ export default function Surveillance({ onBack }: Props) {
             </table>
           </div>
           <p className="text-xs text-slate-500 mt-4">Source: CRPD Q2/Q3/Q4 2025 Quarterly Reports</p>
+        </Card>
+
+        {/* Live transparency-portal stats */}
+        <Card>
+          <SectionHeader
+            icon={Eye}
+            title="Live System Stats — Last 30 Days"
+            subtitle={`From Flock's own public Cedar Rapids transparency portal, captured ${transparencyPortal.capturedDate}`}
+          />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="border border-red-200 bg-red-50/40 rounded-2xl p-6">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-red-700 mb-2">Plate Reads</p>
+              <p className="text-4xl font-black text-slate-900">{transparencyPortal.platesRead30d.toLocaleString()}</p>
+              <p className="text-sm text-slate-600 mt-2">Unique plates read in the last 30 days. That's roughly <span className="font-bold">{Math.round(transparencyPortal.platesRead30d / 30).toLocaleString()} per day</span>, or one read every <span className="font-bold">{Math.round(86400 / (transparencyPortal.platesRead30d / 30))} seconds</span> on average across the network.</p>
+            </div>
+            <div className="border border-red-200 bg-red-50/40 rounded-2xl p-6">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-red-700 mb-2">Hotlist Hits</p>
+              <p className="text-4xl font-black text-slate-900">{transparencyPortal.hotlistHits30d.toLocaleString()}</p>
+              <p className="text-sm text-slate-600 mt-2">Plates that triggered an alert ({((transparencyPortal.hotlistHits30d / transparencyPortal.platesRead30d) * 100).toFixed(2)}% of all reads). Sources: <span className="font-bold">{transparencyPortal.hotlistsAlertedOn.join(', ')}</span>. Per Flock's policy, hits "are required to be human verified prior to action."</p>
+            </div>
+            <div className="border border-red-200 bg-red-50/40 rounded-2xl p-6">
+              <p className="text-[10px] font-bold uppercase tracking-widest text-red-700 mb-2">User Search Sessions</p>
+              <p className="text-4xl font-black text-slate-900">{transparencyPortal.searchSessions30d.toLocaleString()}</p>
+              <p className="text-sm text-slate-600 mt-2">User-initiated searches against the database in the last 30 days. Per the portal, <span className="font-bold">"all system access requires a valid reason and is stored indefinitely"</span> — the audit log itself never expires.</p>
+            </div>
+          </div>
+          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 mt-5 text-sm">
+            <p className="font-bold text-slate-900 mb-2">CRPD's actionable hotlists (per portal)</p>
+            <p className="text-slate-700">{transparencyPortal.actionableHotlists.join(' · ')}</p>
+            <p className="text-slate-600 mt-3">
+              <span className="font-bold">Stated prohibited uses:</span> immigration enforcement, traffic enforcement, harassment or intimidation, use based solely on a protected class (race, sex, religion), personal use.
+            </p>
+          </div>
+          <p className="text-xs text-slate-500 mt-4">Source: <a href="https://transparency.flocksafety.com/cedar-rapids-ia-pd" className="underline decoration-dotted">transparency.flocksafety.com/cedar-rapids-ia-pd</a></p>
+        </Card>
+
+        {/* How It's Funded — the budget answer + the gap */}
+        <Card>
+          <SectionHeader
+            icon={Eye}
+            title="What the $499,250 Actually Buys"
+            subtitle="The Flock budgetary quote, line by line — sourced from the council packet itself"
+          />
+
+          <div className="space-y-6">
+            <div>
+              <p className="text-slate-700 mb-4">
+                The $499,250 figure is widely cited but rarely broken down. The <span className="font-bold">Flock Safety budgetary quote</span> attached to the June 25, 2024 council packet (in this repo as <code className="text-xs bg-slate-100 px-1 rounded">Cedar Rapids IA - LE Proposal 2024.pdf</code>, p. 25) shows the actual decomposition.
+              </p>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-200">
+                      <th className="text-left py-3 px-4 font-bold text-slate-700">Item</th>
+                      <th className="text-left py-3 px-4 font-bold text-slate-700">Type</th>
+                      <th className="text-right py-3 px-4 font-bold text-slate-700">Unit Cost</th>
+                      <th className="text-right py-3 px-4 font-bold text-slate-700">Qty</th>
+                      <th className="text-right py-3 px-4 font-bold text-slate-700">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {flockContractLines.map((line, idx) => (
+                      <tr key={idx} className={idx % 2 === 0 ? 'bg-slate-50' : 'bg-white'}>
+                        <td className="py-3 px-4 text-slate-900">{line.item}</td>
+                        <td className="py-3 px-4 text-slate-600">{line.kind}</td>
+                        <td className="py-3 px-4 text-right text-slate-600">{line.cost}</td>
+                        <td className="py-3 px-4 text-right text-slate-600">{line.qty}</td>
+                        <td className="py-3 px-4 text-right font-bold text-slate-900">{fmtUSD(line.total)}</td>
+                      </tr>
+                    ))}
+                    <tr className="bg-red-50 border-t-2 border-red-200">
+                      <td className="py-3 px-4 font-bold text-slate-900" colSpan={4}>Year 1 Subtotal (annual recurring + one-time install fees)</td>
+                      <td className="py-3 px-4 text-right font-bold text-slate-900">$274,250</td>
+                    </tr>
+                    <tr className="bg-red-50">
+                      <td className="py-3 px-4 font-bold text-slate-900" colSpan={4}>Year 2 (annual recurring only)</td>
+                      <td className="py-3 px-4 text-right font-bold text-slate-900">$225,000</td>
+                    </tr>
+                    <tr className="bg-red-100 border-t-2 border-red-300">
+                      <td className="py-3 px-4 font-black text-red-900" colSpan={4}>Contract Total</td>
+                      <td className="py-3 px-4 text-right font-black text-red-900">$499,250</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-slate-500 mt-2">Source: <span className="italic">Cedar Rapids IA - LE Proposal 2024.pdf</span>, p. 25 (Flock Safety budgetary quote, attached to 2024-06-25 council packet).</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="border border-slate-200 rounded-2xl p-5 bg-slate-50">
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-3 text-slate-600">Contract Terms</p>
+                <dl className="space-y-2 text-sm">
+                  {flockContractTerms.map((t, idx) => (
+                    <div key={idx} className="flex justify-between gap-3">
+                      <dt className="text-slate-600 flex-shrink-0">{t.label}</dt>
+                      <dd className="text-slate-900 font-semibold text-right">{t.value}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+              <div className="border border-slate-200 rounded-2xl p-5 bg-slate-50">
+                <p className="text-[10px] font-bold uppercase tracking-widest mb-3 text-slate-600">What's Bundled in the $225K/year</p>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> FlockOS™ Essentials software platform</li>
+                  <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> 70 × Flock Safety Falcon® LPR cameras (fixed)</li>
+                  <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> 5 × Flock Safety Condor™ PTZ cameras with LTE service</li>
+                  <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> Hardware, installation, software, maintenance — all-inclusive lease model</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </Card>
+
+        {/* The $225K coincidence — the strongest circumstantial match */}
+        <Card>
+          <SectionHeader
+            icon={Eye}
+            title="The $225K Coincidence"
+            subtitle="One number connects the Flock contract to a specific Cedar Rapids budget line. The match is exact. The budget never names Flock."
+          />
+
+          <div className="space-y-6 text-slate-700">
+            <p>
+              The Flock proposal lists an annual recurring fee of <span className="font-bold">$225,000</span>. In FY26, the City of Cedar Rapids grew its Police "computer software subscriptions" line by <span className="font-bold">+$96K to a total of $225K</span> for "the license plate reader program." Same number. Same year. Both documented. <span className="font-bold">Neither document references the other.</span>
+            </p>
+
+            {/* Three-year trajectory chart */}
+            <div>
+              <p className="font-bold text-slate-900 mb-2">Police LPR-subscription line trajectory</p>
+              <ResponsiveContainer width="100%" height={240}>
+                <BarChart data={lprSubscriptionTrend} margin={{ top: 10, right: 20, left: 20, bottom: 10 }}>
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                  <XAxis dataKey="year" axisLine={false} tickLine={false} tick={{ fill: '#475569', fontSize: 12 }} />
+                  <YAxis
+                    axisLine={false}
+                    tickLine={false}
+                    tick={{ fill: '#94a3b8', fontSize: 12 }}
+                    tickFormatter={(v: number) => `$${(v / 1000).toFixed(0)}K`}
+                  />
+                  <Tooltip
+                    cursor={{ fill: '#fef2f2', radius: 8 }}
+                    formatter={(_v: number, _n: string, p: any) => [p.payload.label, p.payload.note]}
+                    contentStyle={{ borderRadius: '12px', border: '1px solid #fecaca', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', padding: '8px 12px' }}
+                  />
+                  <Bar dataKey="amount" radius={[8, 8, 0, 0]} barSize={60}>
+                    {lprSubscriptionTrend.map((entry, idx) => (
+                      <Bar key={idx} dataKey="amount" fill={entry.fill} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+              <p className="text-xs text-slate-500 mt-2">
+                FY25 figure derived from FY26 narrative ("by $96K to $225K"). FY27 line is shown gray because the LPR-specific carve-out was not broken out in the FY27 narrative — it may have stayed at $225K, but the budget book doesn't say.
+              </p>
+            </div>
+
+            {/* Reconciliation panel */}
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="border border-red-200 bg-red-50/40 rounded-2xl p-5">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-red-700 mb-3">What the contract says</p>
+                <dl className="space-y-3 text-sm">
+                  <div>
+                    <dt className="text-slate-600">Flock annual recurring fee</dt>
+                    <dd className="text-2xl font-black text-slate-900">$225,000.00</dd>
+                  </div>
+                  <div>
+                    <dt className="text-slate-600">Billing</dt>
+                    <dd className="text-slate-900 font-semibold">First year invoiced at signing (June 2024)</dd>
+                  </div>
+                  <div>
+                    <dt className="text-slate-600">Term</dt>
+                    <dd className="text-slate-900 font-semibold">24 months → first full FY = FY26</dd>
+                  </div>
+                </dl>
+                <p className="text-xs text-slate-500 mt-3 italic">Source: Cedar Rapids IA - LE Proposal 2024.pdf, p. 25</p>
+              </div>
+              <div className="border border-red-200 bg-red-50/40 rounded-2xl p-5">
+                <p className="text-[10px] font-bold uppercase tracking-widest text-red-700 mb-3">What the FY26 budget says</p>
+                <dl className="space-y-3 text-sm">
+                  <div>
+                    <dt className="text-slate-600">Police LPR-subscription line FY26</dt>
+                    <dd className="text-2xl font-black text-slate-900">$225,000</dd>
+                  </div>
+                  <div>
+                    <dt className="text-slate-600">Year-over-year change</dt>
+                    <dd className="text-slate-900 font-semibold">+$96,000 (FY25 baseline ~$129K)</dd>
+                  </div>
+                  <div>
+                    <dt className="text-slate-600">First fiscal year reflecting Flock</dt>
+                    <dd className="text-slate-900 font-semibold">FY26 (July 2025 – June 2026)</dd>
+                  </div>
+                </dl>
+                <p className="text-xs text-slate-500 mt-3 italic">Source: FY26 Adopted Budget Book, p. 64 and p. 118</p>
+              </div>
+            </div>
+
+            {/* Direct budget quotes */}
+            <div>
+              <p className="font-bold text-slate-900 mb-3">The exact wording in the budget books</p>
+              <div className="space-y-3">
+                {lprBudgetQuotes.map((q, idx) => (
+                  <div key={idx} className="border border-slate-200 rounded-xl p-4 bg-slate-50">
+                    <div className="flex items-baseline gap-3 mb-2">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-700">{q.source}</span>
+                      <span className="text-xs text-slate-500">{q.page}</span>
+                    </div>
+                    <p className="text-slate-900 italic mb-2">{q.quote}</p>
+                    <p className="text-xs text-slate-600">{q.context}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Caveats — must be visually weighted */}
+            <div className="bg-yellow-50 border-2 border-yellow-300 rounded-2xl p-6">
+              <p className="font-bold text-slate-900 mb-3 text-lg">⚠️ What this is NOT proof of</p>
+              <ul className="space-y-2 text-sm text-slate-800">
+                <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> <span><span className="font-bold">The budget never names Flock.</span> Not in any year, not in any section, not in any account-level table. The word "Flock" appears once in three years of budget books — without a dollar figure.</span></li>
+                <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> <span><span className="font-bold">The $499,250 contract figure appears nowhere</span> in the budget books. Not even rounded.</span></li>
+                <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> <span><span className="font-bold">The prior $129K LPR line predates the Flock contract.</span> CRPD also operates 2 mobile Motorola ALPR units and had a "license plate readers" program in the FY25 budget — adopted before the Flock contract was even approved. The $129K could have been Motorola, an earlier ALPR pilot, or something else entirely. If so, the $96K bump is the *new* Flock addition rather than a Flock-only line.</span></li>
+                <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> <span><span className="font-bold">FY27 isn't broken out.</span> The LPR-specific carve-out vanishes from FY27 narrative. The line could have stayed at $225K, gone up, or been reorganized — we don't know.</span></li>
+                <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> <span><span className="font-bold">An exact-dollar match could be coincidence.</span> $225K is a round vendor-pricing number. Other LPR vendors price similarly.</span></li>
+              </ul>
+              <p className="text-sm text-slate-700 mt-4 font-semibold">
+                The $225K match is a strong circumstantial signal — strong enough to be worth pursuing through a public records request — but it is not proof that this specific budget line is where Flock gets paid.
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        {/* Capital lifecycle spend — separate, but adjacent */}
+        <Card>
+          <SectionHeader
+            icon={Eye}
+            title="Adjacent Capital Spend"
+            subtitle="Not Flock — but related video-security spending the council book lists separately"
+          />
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-slate-200">
+                  <th className="text-left py-3 px-4 font-bold text-slate-700">Project</th>
+                  <th className="text-left py-3 px-4 font-bold text-slate-700">Detail</th>
+                  <th className="text-right py-3 px-4 font-bold text-slate-700">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                {capitalItems.map((c, idx) => (
+                  <tr key={idx} className={idx % 2 === 0 ? 'bg-slate-50' : 'bg-white'}>
+                    <td className="py-3 px-4 font-semibold text-slate-900">{c.project}</td>
+                    <td className="py-3 px-4 text-slate-600">{c.detail}</td>
+                    <td className="py-3 px-4 text-right font-bold text-red-700">{c.amount === null ? '—' : fmtUSDShort(c.amount)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-xs text-slate-500 mt-4">Source: FY27 Adopted Budget Book — Supplemental, Section 354, p. 206; FY25 Book 1 p. 9518; FY25 Book 2. These items fund IT video-security infrastructure at Police HQ and the City Services Center — distinct from the Flock ALPR contract.</p>
         </Card>
 
         {/* Quarterly Stats */}
@@ -255,28 +669,6 @@ export default function Surveillance({ onBack }: Props) {
           <p className="text-xs text-slate-500 mt-4">Source: CRPD Public Safety Camera Statistics Q2, Q3, Q4 2025</p>
         </Card>
 
-        {/* Contract Details */}
-        <Card>
-          <SectionHeader
-            icon={Eye}
-            title="How It Got Approved"
-            subtitle="The $499K contract without public debate"
-          />
-          <div className="space-y-4 text-slate-700">
-            <div>
-              <p className="font-bold text-slate-900 mb-2">June 25, 2024 — Cedar Rapids City Council Meeting</p>
-              <p className="text-slate-600">A $499,250 contract with Flock Group Inc. for an automated license plate reader system was approved by the Cedar Rapids City Council.</p>
-            </div>
-            <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
-              <p className="font-bold text-slate-900 mb-2">🚨 Consent Agenda</p>
-              <p className="text-slate-600">The contract was passed on the <span className="font-bold">Consent Agenda</span> — a bulk approval mechanism where routine and non-controversial items are voted on without recorded debate or individual discussion.</p>
-              <p className="text-slate-600 mt-2">The same agenda included water service line repairs, sewer lining, curb ramp work, and traffic signal upgrades.</p>
-              <p className="text-slate-600 mt-2"><span className="font-bold">No public comment. No council member questions. No debate.</span></p>
-            </div>
-          </div>
-          <p className="text-xs text-slate-500 mt-4">Source: Cedar Rapids City Council session summary, 2024-06-25</p>
-        </Card>
-
         {/* Data Collection & Policy */}
         <Card>
           <SectionHeader
@@ -312,32 +704,56 @@ export default function Surveillance({ onBack }: Props) {
           </div>
         </Card>
 
-        {/* Federal Access */}
+        {/* Federal Access — now grounded in actual portal data */}
         <Card>
           <SectionHeader
             icon={Eye}
-            title="Federal & Multi-Agency Access"
-            subtitle="Who else can see this data?"
+            title="Who Sees Cedar Rapids' Plate Reads"
+            subtitle={`~${transparencyPortal.sharingNetworkAgencyCount} agencies across the country, per the portal`}
           />
           <div className="space-y-4 text-slate-700">
-            <div className="bg-red-50 border border-red-200 rounded-xl p-6">
-              <p className="font-bold text-slate-900 mb-3">ICE in Sanctuary Cities</p>
-              <p className="text-slate-600">
-                The Guardian (2025): ICE agents were able to tap into Flock camera data inside <span className="font-bold">sanctuary cities</span> — accessing tracking data without warrants or judicial oversight.
+            <p>
+              The Cedar Rapids transparency portal lists <span className="font-bold">approximately {transparencyPortal.sharingNetworkAgencyCount} agencies</span> in its outbound sharing network — including <span className="font-bold">~{transparencyPortal.iowaAgencyCount} Iowa agencies</span>, plus state-level law enforcement, fusion centers, and multi-state intelligence networks. A condensed view of the non-local entries:
+            </p>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-slate-200">
+                    <th className="text-left py-3 px-4 font-bold text-slate-700">Agency / Network</th>
+                    <th className="text-left py-3 px-4 font-bold text-slate-700">Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {intelNetworks.map((n, idx) => (
+                    <tr key={idx} className={idx % 2 === 0 ? 'bg-slate-50' : 'bg-white'}>
+                      <td className="py-3 px-4 font-semibold text-slate-900">{n.name}</td>
+                      <td className="py-3 px-4 text-slate-600">{n.kind}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-5">
+              <p className="font-bold text-slate-900 mb-2">What "fusion center" and "ROCIC/MOCIC" mean here</p>
+              <p className="text-sm text-slate-700">
+                These are <span className="font-bold">multi-state intelligence networks</span> that aggregate data from local, state, and federal law enforcement. <span className="font-bold">MOCIC</span> (Mid-States Organized Crime Information Center) covers 9 Midwestern states. <span className="font-bold">ROCIC</span> covers 14 Southern states. Fusion centers like Missouri's are DHS-affiliated. Once Cedar Rapids' plate reads enter these networks, they are searchable by member agencies — including federal partners — without requiring further notice to or approval from CRPD.
+            </p>
+            </div>
+
+            <div className="bg-red-50 border border-red-200 rounded-xl p-5">
+              <p className="font-bold text-slate-900 mb-2">ICE in sanctuary cities</p>
+              <p className="text-sm text-slate-700">
+                The Guardian (2025) reported ICE agents tapped Flock camera data inside <span className="font-bold">sanctuary cities</span> without warrants or judicial oversight. CRPD's portal lists <span className="font-bold">"immigration enforcement"</span> as a prohibited use — but the policy applies to local users querying the system, not to downstream agencies that have been granted access via the sharing network.
               </p>
             </div>
-            <div className="space-y-3">
-              <p className="font-bold text-slate-900">All Iowa Flock agencies:</p>
-              <ul className="space-y-2 text-slate-600 ml-4">
-                <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> Described as sharing data with "federal agencies and multi-state law enforcement network"</li>
-                <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> Carlisle IA: "100+ agencies across multiple states including federal access"</li>
-                <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> <span className="font-bold">No warrant required. No judicial oversight required.</span></li>
-              </ul>
-            </div>
+
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-sm">
-              <p>Virginia Supreme Court classified license plate images as personal data, triggering state privacy statutes. Cedar Rapids takes no such legal position.</p>
+              <p>The Virginia Supreme Court classified license plate images as personal data, triggering state privacy statutes. Cedar Rapids takes no such legal position.</p>
             </div>
           </div>
+          <p className="text-xs text-slate-500 mt-4">Source: <a href="https://transparency.flocksafety.com/cedar-rapids-ia-pd" className="underline decoration-dotted">transparency.flocksafety.com/cedar-rapids-ia-pd</a> (full sharing list); The Guardian, 2025.</p>
         </Card>
 
         {/* Iowa Network */}
@@ -345,7 +761,7 @@ export default function Surveillance({ onBack }: Props) {
           <SectionHeader
             icon={Eye}
             title="The Iowa ALPR Network"
-            subtitle="Cedar Rapids in regional context — 17 agencies, 500+ cameras"
+            subtitle="Cedar Rapids in regional context — Flock camera counts at peer Iowa agencies"
           />
           <ResponsiveContainer width="100%" height={400}>
             <BarChart
@@ -372,12 +788,12 @@ export default function Surveillance({ onBack }: Props) {
               </Bar>
             </BarChart>
           </ResponsiveContainer>
-          <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mt-4">
-            <p className="text-sm text-slate-700">
-              <span className="font-bold">Coralville cancelled their Flock contract in February 2026.</span> The city council voted to end the partnership and remove all cameras.
+          <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mt-4 text-sm text-slate-700">
+            <p>
+              Camera counts here come from individual agency Flock transparency portals and reflect cameras the agency owns — separate from the Cedar Rapids <span className="font-bold">outbound sharing network</span>, which has roughly {transparencyPortal.sharingNetworkAgencyCount} agencies receiving CR data (covered in the section above).
             </p>
           </div>
-          <p className="text-xs text-slate-500 mt-4">Source: Iowa transparency data (Flock Safety Transparency Portals)</p>
+          <p className="text-xs text-slate-500 mt-4">Source: Per-agency Flock Safety transparency portals.</p>
         </Card>
 
         {/* Who's Behind Flock */}
@@ -438,6 +854,7 @@ export default function Surveillance({ onBack }: Props) {
           </div>
           <p className="text-xs text-slate-500 mt-6">Source: CRPD Q2–Q4 2025 Quarterly Reports; The Guardian 2025; EyesOffCR research</p>
         </Card>
+
 
       </main>
     </motion.div>
