@@ -138,16 +138,7 @@ const lprBudgetQuotes = [
   },
 ];
 
-// Capital lifecycle items related to video security (FY27)
-const capitalItems = [
-  { project: 'Lifecycle: Video Security System Upgrades at Police', detail: 'Replace video security server hardware & aging cameras at PD', amount: 132500 },
-  { project: 'Lifecycle: Video Security System Upgrades at City Services', detail: 'Replace server hardware & aging cameras at City Services Center', amount: 50000 },
-  { project: 'Mobile Observation Camera Trailer (Public Works, one-time)', detail: 'Listed FY25 Book 1 p. 9518 — equipment, not recurring', amount: null },
-  { project: 'Lifecycle: Video Security System (FY25 historical reference)', detail: 'Single-year capital line in FY25 Book 2', amount: 1000000 },
-];
-
 const fmtUSD = (n: number) => `$${n.toLocaleString()}`;
-const fmtUSDShort = (n: number) => n >= 1000000 ? `$${(n / 1000000).toFixed(2)}M` : `$${(n / 1000).toFixed(0)}K`;
 
 // Camera network breakdown
 const cameraNetwork = [
@@ -156,30 +147,6 @@ const cameraNetwork = [
   { type: 'Pan-Tilt-Zoom (PTZ)', count: 5 },
   { type: 'Traffic Engineering', count: 'Several' },
   { type: 'Parks & Recreation', count: 3 },
-];
-
-// CRPD claims vs reality
-const claimsVsReality = [
-  {
-    claim: 'ALPR assists investigations',
-    reality: '96.7% of 2025 alerts were innocent vehicles',
-  },
-  {
-    claim: 'Data purged after 30 days',
-    reality: 'Exported data has no retention limit',
-  },
-  {
-    claim: 'Only authorized agencies access data',
-    reality: 'ICE accessed Flock data in sanctuary cities (The Guardian, 2025)',
-  },
-  {
-    claim: 'Supports missing persons',
-    reality: 'CRPD notes tracking non-criminal behavior as a use case',
-  },
-  {
-    claim: 'National law enforcement network',
-    reality: '100+ agencies across multiple states, including federal',
-  },
 ];
 
 const Card = ({ children }: { children: React.ReactNode }) => (
@@ -484,7 +451,7 @@ export default function Surveillance({ onBack }: Props) {
         <Card>
           <SectionHeader
             icon={Eye}
-            title="The $225K Coincidence"
+            title="The $225K Match"
             subtitle="One number connects the Flock contract to a specific Cedar Rapids budget line. The match is exact. The budget never names Flock."
           />
 
@@ -580,51 +547,7 @@ export default function Surveillance({ onBack }: Props) {
               </div>
             </div>
 
-            {/* Caveats — must be visually weighted */}
-            <div className="bg-yellow-50 border-2 border-yellow-300 rounded-2xl p-6">
-              <p className="font-bold text-slate-900 mb-3 text-lg">⚠️ What this is NOT proof of</p>
-              <ul className="space-y-2 text-sm text-slate-800">
-                <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> <span><span className="font-bold">The budget never names Flock.</span> Not in any year, not in any section, not in any account-level table. The word "Flock" appears once in three years of budget books — without a dollar figure.</span></li>
-                <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> <span><span className="font-bold">The $499,250 contract figure appears nowhere</span> in the budget books. Not even rounded.</span></li>
-                <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> <span><span className="font-bold">The prior $129K LPR line predates the Flock contract.</span> CRPD also operates 2 mobile Motorola ALPR units and had a "license plate readers" program in the FY25 budget — adopted before the Flock contract was even approved. The $129K could have been Motorola, an earlier ALPR pilot, or something else entirely. If so, the $96K bump is the *new* Flock addition rather than a Flock-only line.</span></li>
-                <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> <span><span className="font-bold">FY27 isn't broken out.</span> The LPR-specific carve-out vanishes from FY27 narrative. The line could have stayed at $225K, gone up, or been reorganized — we don't know.</span></li>
-                <li className="flex gap-3"><span className="text-red-700 font-bold">•</span> <span><span className="font-bold">An exact-dollar match could be coincidence.</span> $225K is a round vendor-pricing number. Other LPR vendors price similarly.</span></li>
-              </ul>
-              <p className="text-sm text-slate-700 mt-4 font-semibold">
-                The $225K match is a strong circumstantial signal — strong enough to be worth pursuing through a public records request — but it is not proof that this specific budget line is where Flock gets paid.
-              </p>
-            </div>
           </div>
-        </Card>
-
-        {/* Capital lifecycle spend — separate, but adjacent */}
-        <Card>
-          <SectionHeader
-            icon={Eye}
-            title="Adjacent Capital Spend"
-            subtitle="Not Flock — but related video-security spending the council book lists separately"
-          />
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-slate-200">
-                  <th className="text-left py-3 px-4 font-bold text-slate-700">Project</th>
-                  <th className="text-left py-3 px-4 font-bold text-slate-700">Detail</th>
-                  <th className="text-right py-3 px-4 font-bold text-slate-700">Amount</th>
-                </tr>
-              </thead>
-              <tbody>
-                {capitalItems.map((c, idx) => (
-                  <tr key={idx} className={idx % 2 === 0 ? 'bg-slate-50' : 'bg-white'}>
-                    <td className="py-3 px-4 font-semibold text-slate-900">{c.project}</td>
-                    <td className="py-3 px-4 text-slate-600">{c.detail}</td>
-                    <td className="py-3 px-4 text-right font-bold text-red-700">{c.amount === null ? '—' : fmtUSDShort(c.amount)}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-xs text-slate-500 mt-4">Source: FY27 Adopted Budget Book — Supplemental, Section 354, p. 206; FY25 Book 1 p. 9518; FY25 Book 2. These items fund IT video-security infrastructure at Police HQ and the City Services Center — distinct from the Flock ALPR contract.</p>
         </Card>
 
         {/* Quarterly Stats */}
@@ -827,32 +750,6 @@ export default function Surveillance({ onBack }: Props) {
             </div>
           </div>
           <p className="text-xs text-slate-500 mt-4">Source: EyesOffCR blog research</p>
-        </Card>
-
-        {/* Claims vs Reality */}
-        <Card>
-          <SectionHeader
-            icon={Eye}
-            title="What CRPD Says vs. What the Data Shows"
-            subtitle="Comparing official framing to documented facts"
-          />
-          <div className="space-y-3">
-            {claimsVsReality.map((item, idx) => (
-              <div key={idx} className="border border-slate-200 rounded-xl p-4 hover:border-red-300 hover:bg-red-50/20 transition-colors">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-xs font-bold uppercase text-slate-500 mb-1">CRPD's Framing</p>
-                    <p className="text-slate-700 font-semibold">{item.claim}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold uppercase text-red-700 mb-1">The Full Picture</p>
-                    <p className="text-red-700 font-semibold">{item.reality}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="text-xs text-slate-500 mt-6">Source: CRPD Q2–Q4 2025 Quarterly Reports; The Guardian 2025; EyesOffCR research</p>
         </Card>
 
 
