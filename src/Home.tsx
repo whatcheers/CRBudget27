@@ -793,9 +793,8 @@ export default function Home({ onSelectDept, onShowHighlights, onShowSurveillanc
       </main>
 
       <footer className="mx-auto mt-16 max-w-6xl border-t border-slate-200 px-6 pt-8 text-center">
-        <p className="text-sm font-medium uppercase tracking-widest text-slate-400">City of Cedar Rapids, Iowa</p>
-        <p className="mt-2 text-xs text-slate-500">
-          Data sourced from the FY 2027 Budget Document. Figures are estimates as provided to City Council.
+        <p className="text-xs text-slate-500">
+          Data sourced from the Cedar Rapids FY 2027 Budget Documents
         </p>
       </footer>
     </motion.div>
