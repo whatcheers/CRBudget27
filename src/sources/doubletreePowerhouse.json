@@ -1,0 +1,55 @@
+{
+  "deptId": "doubletreePowerhouse",
+  "document": "FY27 Adopted Supplemental",
+  "pdf": "book/fy27-adopted/FY27_Adopted_Supplemental.pdf",
+  "extract": "book/extracted/FY27_powerhouse_supplemental.txt",
+  "totalExpenditures": {
+    "page": 102,
+    "account": null,
+    "label": "Total Expenditures",
+    "amount": 30140273,
+    "amountFormatted": "$30.14M",
+    "column": "FY27 Request",
+    "diffPct": 0,
+    "extractLine": 36,
+    "layoutLine": 5092,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "totalRevenues": {
+    "page": 102,
+    "account": null,
+    "label": "Total Revenues",
+    "amount": 30140273,
+    "amountFormatted": "$30.14M",
+    "column": "FY27 Request",
+    "diffPct": 0,
+    "extractLine": 22,
+    "layoutLine": 5078,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "revenueSources": [
+    null,
+    null,
+    null
+  ],
+  "expenditureBuckets": [
+    null,
+    null,
+    null
+  ],
+  "didYouKnow": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "notableChanges": [
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}

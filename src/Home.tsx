@@ -219,7 +219,7 @@ export default function Home({ onSelectDept, onShowHighlights, onShowSurveillanc
             <h2 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-emerald-400 opacity-90">
               City of Cedar Rapids, Iowa
             </h2>
-            <h1 className="mb-4 text-5xl font-extrabold tracking-tight md:text-7xl">FY 2027 Budget</h1>
+            <h1 className="mb-4 text-3xl font-extrabold tracking-tight sm:text-5xl md:text-7xl">FY 2027 Budget</h1>
             <p className="max-w-2xl text-lg font-light leading-relaxed text-emerald-100 md:text-xl">
               An interactive look at how Cedar Rapids will spend, invest, and tax in fiscal year 2027 — across the General Fund, enterprise utilities, and a $361M capital plan.
             </p>
@@ -232,9 +232,9 @@ export default function Home({ onSelectDept, onShowHighlights, onShowSurveillanc
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-0.5" />
             </button>
           </div>
-          <div className="min-w-[280px] rounded-3xl border border-white/20 bg-white/10 p-8 text-center shadow-2xl backdrop-blur-lg">
+          <div className="w-full md:min-w-[280px] md:w-auto rounded-3xl border border-white/20 bg-white/10 p-8 text-center shadow-2xl backdrop-blur-lg">
             <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-emerald-200">Total Assessed Value</p>
-            <p className="text-5xl font-black tracking-tight text-white">$16.85B</p>
+            <p className="text-3xl font-black tracking-tight text-white sm:text-5xl">$16.85B</p>
             <div className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-emerald-500/20 px-4 py-2 text-sm font-medium text-emerald-200">
               <TrendingUp size={16} /> +6.1% from FY26
             </div>
@@ -360,7 +360,7 @@ export default function Home({ onSelectDept, onShowHighlights, onShowSurveillanc
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
               <h4 className="mb-4 text-center text-sm font-bold uppercase tracking-wider text-slate-500">Revenues</h4>
-              <div className="relative h-[300px]">
+              <div className="relative h-[220px] sm:h-[300px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie data={genFundRevenues} cx="50%" cy="50%" innerRadius={70} outerRadius={110} paddingAngle={2} dataKey="value" stroke="none">
@@ -379,7 +379,7 @@ export default function Home({ onSelectDept, onShowHighlights, onShowSurveillanc
 
             <div>
               <h4 className="mb-4 text-center text-sm font-bold uppercase tracking-wider text-slate-500">Spending by Department</h4>
-              <div className="relative h-[300px]">
+              <div className="relative h-[220px] sm:h-[300px]">
                 <ResponsiveContainer width="100%" height="100%">
                   <PieChart>
                     <Pie data={generalFundDepts} cx="50%" cy="50%" innerRadius={70} outerRadius={110} paddingAngle={2} dataKey="value" stroke="none">
@@ -588,7 +588,7 @@ export default function Home({ onSelectDept, onShowHighlights, onShowSurveillanc
             <p className="mb-4 text-sm leading-relaxed text-indigo-700">
               TIF area assessed valuations grew <strong>$124.8M (17.4%)</strong> to a total of <strong>$843.8M</strong> — major reinvestment in designated districts.
             </p>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="rounded-lg border border-indigo-100/50 bg-white/60 p-3 text-center">
                 <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-indigo-400">Residential</p>
                 <p className="text-xl font-black text-indigo-700">+17.7%</p>
@@ -615,7 +615,7 @@ export default function Home({ onSelectDept, onShowHighlights, onShowSurveillanc
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             <div>
               <h4 className="mb-6 text-sm font-bold uppercase tracking-wider text-slate-700">Levy Rate History</h4>
-              <div className="h-[250px] w-full">
+              <div className="h-[200px] sm:h-[250px] w-full">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={levyHistory} margin={{ top: 10, right: 20, left: -20, bottom: 0 }}>
                     <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
@@ -659,7 +659,7 @@ export default function Home({ onSelectDept, onShowHighlights, onShowSurveillanc
             icon={Hammer}
           />
 
-          <div className="mt-6 h-[400px] w-full">
+          <div className="mt-6 h-[260px] sm:h-[400px] w-full">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={totalCIPData} layout="vertical" margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" horizontal vertical={false} stroke="#f1f5f9" />

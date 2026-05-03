@@ -198,7 +198,7 @@ export default function Surveillance({ onBack }: Props) {
                   <Eye size={36} className="text-white" />
                 </div>
               </div>
-              <h1 className="text-5xl md:text-6xl font-black mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-black mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80">
                 Surveillance & ALPR
               </h1>
               <p className="text-white/90 text-lg md:text-xl max-w-2xl font-medium leading-relaxed">
@@ -206,7 +206,7 @@ export default function Surveillance({ onBack }: Props) {
               </p>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[2rem] text-center shadow-2xl min-w-[280px]">
+            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[2rem] text-center shadow-2xl w-full md:min-w-[280px] md:w-auto">
               <p className="text-white/80 text-xs font-bold uppercase tracking-widest mb-3">System Scope</p>
               <p className="text-4xl font-black text-white tracking-tight">70<span className="text-2xl text-white/70"> Cameras</span></p>
               <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-white/70">$499,250 Contract Value</p>
@@ -452,18 +452,19 @@ export default function Surveillance({ onBack }: Props) {
           <SectionHeader
             icon={Eye}
             title="The $225K Match"
-            subtitle="One number connects the Flock contract to a specific Cedar Rapids budget line. The match is exact. The budget never names Flock."
+            subtitle="The Flock contract's annual fee and the FY26 LPR budget line are the same dollar amount."
           />
 
           <div className="space-y-6 text-slate-700">
             <p>
-              The Flock proposal lists an annual recurring fee of <span className="font-bold">$225,000</span>. In FY26, the City of Cedar Rapids grew its Police "computer software subscriptions" line by <span className="font-bold">+$96K to a total of $225K</span> for "the license plate reader program." Same number. Same year. Both documented. <span className="font-bold">Neither document references the other.</span>
+              The Flock proposal lists an annual recurring fee of <span className="font-bold">$225,000</span>. In FY26, the City of Cedar Rapids' Police "computer software subscriptions" line increased by <span className="font-bold">$96K to $225K</span> for "the license plate reader program." Both figures are documented in their respective sources.
             </p>
 
             {/* Three-year trajectory chart */}
             <div>
               <p className="font-bold text-slate-900 mb-2">Police LPR-subscription line trajectory</p>
-              <ResponsiveContainer width="100%" height={240}>
+              <div className="h-[200px] sm:h-[240px]">
+              <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={lprSubscriptionTrend} margin={{ top: 10, right: 20, left: 20, bottom: 10 }}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
                   <XAxis dataKey="year" axisLine={false} tickLine={false} tick={{ fill: '#475569', fontSize: 12 }} />
@@ -485,6 +486,7 @@ export default function Surveillance({ onBack }: Props) {
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
+              </div>
               <p className="text-xs text-slate-500 mt-2">
                 FY25 figure derived from FY26 narrative ("by $96K to $225K"). FY27 line is shown gray because the LPR-specific carve-out was not broken out in the FY27 narrative — it may have stayed at $225K, but the budget book doesn't say.
               </p>
@@ -686,7 +688,8 @@ export default function Surveillance({ onBack }: Props) {
             title="The Iowa ALPR Network"
             subtitle="Cedar Rapids in regional context — Flock camera counts at peer Iowa agencies"
           />
-          <ResponsiveContainer width="100%" height={400}>
+          <div className="h-[320px] sm:h-[400px]">
+          <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={iowaNetworkData}
               layout="vertical"
@@ -711,6 +714,7 @@ export default function Surveillance({ onBack }: Props) {
               </Bar>
             </BarChart>
           </ResponsiveContainer>
+          </div>
           <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 mt-4 text-sm text-slate-700">
             <p>
               Camera counts here come from individual agency Flock transparency portals and reflect cameras the agency owns — separate from the Cedar Rapids <span className="font-bold">outbound sharing network</span>, which has roughly {transparencyPortal.sharingNetworkAgencyCount} agencies receiving CR data (covered in the section above).

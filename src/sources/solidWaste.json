@@ -1,0 +1,224 @@
+{
+  "deptId": "solidWaste",
+  "document": "FY27 Adopted Supplemental",
+  "pdf": "book/fy27-adopted/FY27_Adopted_Supplemental.pdf",
+  "extract": "book/extracted/FY27_solidwaste_supplemental.txt",
+  "totalExpenditures": {
+    "page": 115,
+    "account": null,
+    "label": "Total Expenditures",
+    "amount": 15150661,
+    "amountFormatted": "$15.15M",
+    "column": "FY27 Request",
+    "diffPct": 0,
+    "extractLine": 121,
+    "layoutLine": 5806,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "totalRevenues": {
+    "page": 114,
+    "account": null,
+    "label": "Total Revenues",
+    "amount": 14651784,
+    "amountFormatted": "$14.65M",
+    "column": "FY27 Request",
+    "diffPct": 0.01,
+    "extractLine": 33,
+    "layoutLine": 5718,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "revenueSources": [
+    {
+      "page": 114,
+      "account": "432001",
+      "label": "Solid Waste Collection Fees",
+      "amount": 11412356,
+      "amountFormatted": "$11.41M",
+      "column": "FY27 Request",
+      "diffPct": 0.02,
+      "extractLine": 16,
+      "layoutLine": 5701,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 114,
+      "account": "432003",
+      "label": "Recycling & Reduction Fees",
+      "amount": 2736628,
+      "amountFormatted": "$2.74M",
+      "column": "FY27 Request",
+      "diffPct": 0.12,
+      "extractLine": 18,
+      "layoutLine": 5703,
+      "document": "FY27 Adopted Supplemental"
+    },
+    null,
+    {
+      "page": 114,
+      "account": "471008",
+      "label": "Special Assessment Charges",
+      "amount": 100000,
+      "amountFormatted": "$100K",
+      "column": "FY26 Adopted",
+      "diffPct": 0,
+      "extractLine": 27,
+      "layoutLine": 5712,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 114,
+      "account": "431502",
+      "label": "Snow/Weed Abatements",
+      "amount": 90000,
+      "amountFormatted": "$90K",
+      "column": "FY26 Adopted",
+      "diffPct": 0,
+      "extractLine": 15,
+      "layoutLine": 5700,
+      "document": "FY27 Adopted Supplemental"
+    },
+    null
+  ],
+  "expenditureBuckets": [
+    null,
+    null,
+    null
+  ],
+  "didYouKnow": [
+    {
+      "page": 114,
+      "account": "523102",
+      "label": "Landfill Fees",
+      "amount": 2454618,
+      "amountFormatted": "$2.45M",
+      "column": "FY27 Request",
+      "diffPct": 0.19,
+      "extractLine": 62,
+      "layoutLine": 5747,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 115,
+      "account": "522108",
+      "label": "Routine City Fleet Charges",
+      "amount": 1743068,
+      "amountFormatted": "$1.74M",
+      "column": "FY27 Request",
+      "diffPct": 0.18,
+      "extractLine": 102,
+      "layoutLine": 5787,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 115,
+      "account": "524102",
+      "label": "City Fleet Rental Charges",
+      "amount": 1602552,
+      "amountFormatted": "$1.60M",
+      "column": "FY27 Request",
+      "diffPct": 0.16,
+      "extractLine": 105,
+      "layoutLine": 5790,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 115,
+      "account": "532100",
+      "label": "Diesel Fuel",
+      "amount": 650000,
+      "amountFormatted": "$650K",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 108,
+      "layoutLine": 5793,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 115,
+      "account": "541106",
+      "label": "Grants & Contributions",
+      "amount": 500000,
+      "amountFormatted": "$500K",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 89,
+      "layoutLine": 5774,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 115,
+      "account": "531109",
+      "label": "Equipment/Furniture/Fixtures",
+      "amount": 200000,
+      "amountFormatted": "$200K",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 75,
+      "layoutLine": 5760,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ],
+  "notableChanges": [
+    {
+      "page": 114,
+      "account": "432001",
+      "label": "Solid Waste Collection Fees",
+      "amount": 795533,
+      "amountFormatted": "$796K",
+      "column": "Change",
+      "diffPct": 0.06,
+      "extractLine": 16,
+      "layoutLine": 5701,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 115,
+      "account": "531109",
+      "label": "Equipment/Furniture/Fixtures",
+      "amount": -1000000,
+      "amountFormatted": "$-1.00M",
+      "column": "Change",
+      "diffPct": 0,
+      "extractLine": 75,
+      "layoutLine": 5760,
+      "document": "FY27 Adopted Supplemental"
+    },
+    null,
+    {
+      "page": 115,
+      "account": "541106",
+      "label": "Grants & Contributions",
+      "amount": 172932,
+      "amountFormatted": "$173K",
+      "column": "Change",
+      "diffPct": 0.04,
+      "extractLine": 89,
+      "layoutLine": 5774,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 114,
+      "account": "523102",
+      "label": "Landfill Fees",
+      "amount": -161912,
+      "amountFormatted": "$-162K",
+      "column": "Change",
+      "diffPct": 0.05,
+      "extractLine": 62,
+      "layoutLine": 5747,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 115,
+      "account": "524102",
+      "label": "City Fleet Rental Charges",
+      "amount": 132425,
+      "amountFormatted": "$132K",
+      "column": "Change",
+      "diffPct": 0.32,
+      "extractLine": 105,
+      "layoutLine": 5790,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ]
+}

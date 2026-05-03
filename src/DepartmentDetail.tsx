@@ -11,7 +11,88 @@ import {
   CartesianGrid,
   Cell
 } from 'recharts';
-import { ArrowLeft, Users, Zap, CheckCircle2, Bookmark, Flame, ShieldCheck, Wrench, Leaf, Plane, Bus, Recycle, Droplets, Waves, Building2, TrendingUp, TrendingDown, Coins, PieChart, Sparkles } from 'lucide-react';
+import { ArrowLeft, Users, Zap, CheckCircle2, Bookmark, Flame, ShieldCheck, Wrench, Leaf, Plane, Bus, Recycle, Droplets, Waves, Building2, TrendingUp, TrendingDown, Coins, PieChart, Sparkles, FileText } from 'lucide-react';
+
+type SourceCitation = {
+  page: number | null;
+  account: string | null;
+  label: string;
+  amount: number;
+  amountFormatted: string;
+  column: string;
+  diffPct: number;
+  extractLine: number;
+  layoutLine: number;
+  document: string;
+};
+type SourcesFile = {
+  deptId: string;
+  document: string;
+  pdf: string;
+  totalExpenditures: SourceCitation | null;
+  totalRevenues: SourceCitation | null;
+  revenueSources: (SourceCitation | null)[];
+  expenditureBuckets: (SourceCitation | null)[];
+  didYouKnow: (SourceCitation | null)[];
+  notableChanges: (SourceCitation | null)[];
+};
+const SOURCES_BY_DEPT = import.meta.glob<{ default: SourcesFile }>('./sources/*.json', { eager: true });
+const SOURCES: Record<string, SourcesFile> = Object.fromEntries(
+  Object.entries(SOURCES_BY_DEPT).map(([path, mod]) => {
+    const id = path.replace(/^\.\/sources\//, '').replace(/\.json$/, '');
+    return [id, mod.default];
+  })
+);
+
+function SourceChip({ source }: { source: SourceCitation | null | undefined }) {
+  if (!source) return null;
+  const bits = [`p.${source.page}`];
+  if (source.account) bits.push(source.account);
+  const title = `${source.document} — ${source.label} (${source.column}): ${source.amountFormatted}`;
+  return (
+    <span
+      title={title}
+      className="inline-flex items-center gap-1 ml-2 px-1.5 py-0.5 rounded text-[10px] font-mono uppercase tracking-wide text-slate-500 bg-slate-100 border border-slate-200 align-middle"
+    >
+      <FileText size={10} className="opacity-60" />
+      {bits.join(' · ')}
+    </span>
+  );
+}
+
+function splitLabel(label: string): [string, string?] {
+  if (label.length <= 14) return [label];
+  const breakChars = ['/', '&', ' '];
+  for (const ch of breakChars) {
+    const idx = label.lastIndexOf(ch, Math.ceil(label.length / 2) + 3);
+    if (idx > 2 && idx < label.length - 2) {
+      const left = label.slice(0, ch === ' ' ? idx : idx + 1).trim();
+      const right = label.slice(idx + 1).trim();
+      if (left && right) return [left, right];
+    }
+  }
+  const mid = Math.ceil(label.length / 2);
+  return [label.slice(0, mid), label.slice(mid)];
+}
+
+function YAxisWrappedTick(props: any) {
+  const { x, y, payload } = props;
+  const lines = splitLabel(String(payload.value));
+  const style = { fill: '#475569', fontSize: 13, fontWeight: 600 } as const;
+  if (lines.length === 1) {
+    return (
+      <text x={x} y={y} dy={4} textAnchor="end" style={style}>
+        {lines[0]}
+      </text>
+    );
+  }
+  return (
+    <text x={x} y={y} textAnchor="end" style={style}>
+      <tspan x={x} dy={-2}>{lines[0]}</tspan>
+      <tspan x={x} dy={14}>{lines[1]}</tspan>
+    </text>
+  );
+}
 
 export default function DepartmentDetail({ 
   deptId, 
@@ -35,6 +116,7 @@ export default function DepartmentDetail({
   if (!dept) return null;
   const Icon = dept.icon;
   const supp = dept.supplementalFY27;
+  const srcs = SOURCES[dept.id] as SourcesFile | undefined;
 
   // Extract core services from highlights if they exist
   let coreServicesStr = '';
@@ -73,7 +155,7 @@ export default function DepartmentDetail({
                 </div>
                 <h2 className="text-emerald-100 font-bold tracking-widest uppercase text-xs opacity-90 border border-white/20 rounded-full px-3 py-1 bg-white/5 backdrop-blur-md">{dept.fundType}</h2>
               </div>
-              <h1 className="text-5xl md:text-6xl font-black mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80">{dept.name}</h1>
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-black mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-white/80">{dept.name}</h1>
               <p className="text-white/90 text-lg md:text-xl max-w-2xl font-medium leading-relaxed mb-8">
                 {dept.description}
               </p>
@@ -90,9 +172,9 @@ export default function DepartmentDetail({
               )}
             </div>
             
-            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[2rem] text-center shadow-2xl min-w-[280px]">
+            <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-[2rem] text-center shadow-2xl w-full md:min-w-[280px] md:w-auto">
               <p className="text-white/80 text-xs font-bold uppercase tracking-widest mb-3">Total Department Budget</p>
-              <p className="text-6xl font-black text-white tracking-tight">${dept.budget}<span className="text-3xl text-white/70">M</span></p>
+              <p className="text-4xl sm:text-6xl font-black text-white tracking-tight">${dept.budget}<span className="text-2xl sm:text-3xl text-white/70">M</span></p>
               <p className="mt-3 text-xs font-semibold uppercase tracking-widest text-white/70">{dept.fundType}</p>
             </div>
           </div>
@@ -126,7 +208,7 @@ export default function DepartmentDetail({
              initial={{ opacity: 0, y: 20 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ delay: 0.3 }}
-             className="bg-white p-8 md:p-10 rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100 sticky top-8"
+             className="bg-white p-8 md:p-10 rounded-[2rem] shadow-xl shadow-slate-200/50 border border-slate-100 md:sticky md:top-8"
           >
             <div className="mb-8 flex items-center gap-4">
               <div className="p-3 rounded-2xl bg-slate-50 border border-slate-100 text-slate-700">
@@ -138,7 +220,7 @@ export default function DepartmentDetail({
               </div>
             </div>
             
-            <div className="h-[400px]">
+            <div className="h-[260px] sm:h-[400px]">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart 
                   data={[...dept.expenses].sort((a,b) => b.value - a.value)} 
@@ -147,7 +229,7 @@ export default function DepartmentDetail({
                 >
                   <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} stroke="#f8fafc" />
                   <XAxis type="number" axisLine={false} tickLine={false} tick={{fill: '#94a3b8', fontSize: 12}} tickFormatter={(val) => `$${val}M`} />
-                  <YAxis dataKey="name" type="category" axisLine={false} tickLine={false} tick={{fill: '#475569', fontSize: 13, fontWeight: 600}} width={120} />
+                  <YAxis dataKey="name" type="category" axisLine={false} tickLine={false} tick={<YAxisWrappedTick />} width={140} interval={0} />
                   <Tooltip 
                     cursor={{ fill: '#f1f5f9', radius: 8 }}
                     formatter={(value: number) => [`$${value.toFixed(2)}M`, 'Budget']}
@@ -218,7 +300,10 @@ export default function DepartmentDetail({
                   return (
                     <div key={i}>
                       <div className="flex justify-between items-baseline mb-2">
-                        <p className="font-semibold text-slate-800">{r.name}</p>
+                        <p className="font-semibold text-slate-800">
+                          {r.name}
+                          <SourceChip source={srcs?.revenueSources?.[i]} />
+                        </p>
                         <p className="font-bold tabular-nums text-slate-900">${r.value.toFixed(2)}M <span className="text-slate-400 font-medium text-sm">({pct.toFixed(0)}%)</span></p>
                       </div>
                       <div className="h-3 bg-slate-100 rounded-full overflow-hidden">
@@ -259,7 +344,7 @@ export default function DepartmentDetail({
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {supp.expenditureBuckets.map((b, i) => (
                   <div key={i} className="p-6 rounded-2xl border-2 transition-colors" style={{ borderColor: `${dept.color}30`, backgroundColor: `${dept.color}06` }}>
-                    <div className="text-5xl font-black tracking-tight" style={{ color: dept.color }}>{b.share}%</div>
+                    <div className="text-3xl sm:text-5xl font-black tracking-tight" style={{ color: dept.color }}>{b.share}%</div>
                     <div className="mt-2 font-bold text-slate-900">{b.name}</div>
                     <div className="text-slate-500 text-sm font-medium tabular-nums">${b.value.toFixed(2)}M</div>
                   </div>
@@ -288,6 +373,7 @@ export default function DepartmentDetail({
                     <div className="text-3xl font-black tracking-tight" style={{ color: dept.color }}>{d.value}</div>
                     <div className="mt-1 font-bold text-slate-900 text-sm">{d.label}</div>
                     <div className="text-slate-500 text-xs leading-relaxed mt-1">{d.sub}</div>
+                    {srcs?.didYouKnow?.[i] && <div className="mt-2"><SourceChip source={srcs.didYouKnow[i]} /></div>}
                   </div>
                 ))}
               </div>
@@ -314,7 +400,10 @@ export default function DepartmentDetail({
                   return (
                     <div key={i} className="flex items-center justify-between gap-4 py-4 first:pt-0 last:pb-0">
                       <div className="flex-1 min-w-0">
-                        <p className="font-semibold text-slate-800">{c.name}</p>
+                        <p className="font-semibold text-slate-800">
+                          {c.name}
+                          <SourceChip source={srcs?.notableChanges?.[i]} />
+                        </p>
                         <p className="text-slate-500 text-xs mt-0.5">{c.note}</p>
                       </div>
                       <div
@@ -332,6 +421,16 @@ export default function DepartmentDetail({
                 })}
               </div>
             </motion.div>
+
+            {srcs && (
+              <div className="text-center text-xs text-slate-500 px-4">
+                <p className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200">
+                  <FileText size={12} className="opacity-60" />
+                  Figures sourced from <span className="font-semibold text-slate-700">{srcs.document}</span>
+                  <span className="text-slate-400">— hover a chip to see the page, account, and amount</span>
+                </p>
+              </div>
+            )}
           </>
         )}
       </main>

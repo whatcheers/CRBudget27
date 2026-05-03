@@ -1,0 +1,222 @@
+{
+  "deptId": "fire",
+  "document": "FY27 Adopted Supplemental",
+  "pdf": "book/fy27-adopted/FY27_Adopted_Supplemental.pdf",
+  "extract": "book/extracted/FY27_fire_supplemental.txt",
+  "totalExpenditures": {
+    "page": 58,
+    "account": null,
+    "label": "Total Expenditures",
+    "amount": 26861345,
+    "amountFormatted": "$26.86M",
+    "column": "FY27 Request",
+    "diffPct": 0.01,
+    "extractLine": 119,
+    "layoutLine": 2971,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "totalRevenues": {
+    "page": 57,
+    "account": null,
+    "label": "Total Revenues",
+    "amount": 3686317,
+    "amountFormatted": "$3.69M",
+    "column": "FY27 Request",
+    "diffPct": 0.1,
+    "extractLine": 33,
+    "layoutLine": 2885,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "revenueSources": [
+    {
+      "page": 57,
+      "account": "483001",
+      "label": "Operating Transfer In - Inter",
+      "amount": 2507317,
+      "amountFormatted": "$2.51M",
+      "column": "FY27 Request",
+      "diffPct": 0.11,
+      "extractLine": 31,
+      "layoutLine": 2883,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 57,
+      "account": "431103",
+      "label": "Protective Inspection Fees",
+      "amount": 725000,
+      "amountFormatted": "$725K",
+      "column": "FY27 Request",
+      "diffPct": 0.68,
+      "extractLine": 19,
+      "layoutLine": 2871,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 57,
+      "account": "431102",
+      "label": "Special Fire Services",
+      "amount": 451651,
+      "amountFormatted": "$452K",
+      "column": "FY25 Actual",
+      "diffPct": 0.37,
+      "extractLine": 18,
+      "layoutLine": 2870,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 57,
+      "account": "512600",
+      "label": "Other Employee Benefits",
+      "amount": 2136,
+      "amountFormatted": "$2K",
+      "column": "Change",
+      "diffPct": 6.8,
+      "extractLine": 43,
+      "layoutLine": 2895,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ],
+  "expenditureBuckets": [
+    null,
+    null,
+    null
+  ],
+  "didYouKnow": [
+    {
+      "page": 58,
+      "account": "521106",
+      "label": "Health Services",
+      "amount": 500000,
+      "amountFormatted": "$500K",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 97,
+      "layoutLine": 2949,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 58,
+      "account": "522108",
+      "label": "Routine City Fleet Charges",
+      "amount": 665881,
+      "amountFormatted": "$666K",
+      "column": "FY27 Request",
+      "diffPct": 0.02,
+      "extractLine": 99,
+      "layoutLine": 2951,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 58,
+      "account": "524102",
+      "label": "City Fleet Rental Charges",
+      "amount": 194725,
+      "amountFormatted": "$195K",
+      "column": "FY27 Request",
+      "diffPct": 0.14,
+      "extractLine": 103,
+      "layoutLine": 2955,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 58,
+      "account": "532100",
+      "label": "Diesel Fuel",
+      "amount": 110000,
+      "amountFormatted": "$110K",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 107,
+      "layoutLine": 2959,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 57,
+      "account": "521108",
+      "label": "Other Professional Services",
+      "amount": 133500,
+      "amountFormatted": "$134K",
+      "column": "FY27 Request",
+      "diffPct": 0.37,
+      "extractLine": 48,
+      "layoutLine": 2900,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 58,
+      "account": "531124",
+      "label": "Personal Protective Gear",
+      "amount": 32668,
+      "amountFormatted": "$33K",
+      "column": "FY26 Adopted",
+      "diffPct": 1.01,
+      "extractLine": 81,
+      "layoutLine": 2933,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ],
+  "notableChanges": [
+    null,
+    {
+      "page": 58,
+      "account": "521106",
+      "label": "Health Services",
+      "amount": 200000,
+      "amountFormatted": "$200K",
+      "column": "Change",
+      "diffPct": 0,
+      "extractLine": 97,
+      "layoutLine": 2949,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 58,
+      "account": "522108",
+      "label": "Routine City Fleet Charges",
+      "amount": 99500,
+      "amountFormatted": "$100K",
+      "column": "Change",
+      "diffPct": 0.5,
+      "extractLine": 99,
+      "layoutLine": 2951,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 57,
+      "account": "521108",
+      "label": "Other Professional Services",
+      "amount": 40000,
+      "amountFormatted": "$40K",
+      "column": "Change",
+      "diffPct": 0,
+      "extractLine": 48,
+      "layoutLine": 2900,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 58,
+      "account": "532100",
+      "label": "Diesel Fuel",
+      "amount": 32902,
+      "amountFormatted": "$33K",
+      "column": "Change",
+      "diffPct": 0.3,
+      "extractLine": 107,
+      "layoutLine": 2959,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 58,
+      "account": "525104",
+      "label": "Liability Insurance",
+      "amount": -30207,
+      "amountFormatted": "$-30K",
+      "column": "Change",
+      "diffPct": 0.69,
+      "extractLine": 104,
+      "layoutLine": 2956,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ]
+}

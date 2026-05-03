@@ -1,0 +1,187 @@
+{
+  "deptId": "publicWorks",
+  "document": "FY27 Adopted Supplemental",
+  "pdf": "book/fy27-adopted/FY27_Adopted_Supplemental.pdf",
+  "extract": "book/extracted/FY27_PW_supplemental.txt",
+  "totalExpenditures": {
+    "page": 81,
+    "account": null,
+    "label": "Total Expenditures",
+    "amount": 28244921,
+    "amountFormatted": "$28.24M",
+    "column": "FY27 Request",
+    "diffPct": 0.02,
+    "extractLine": 178,
+    "layoutLine": 4087,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "totalRevenues": {
+    "page": 79,
+    "account": null,
+    "label": "Total Revenues",
+    "amount": 22937749,
+    "amountFormatted": "$22.94M",
+    "column": "FY27 Request",
+    "diffPct": 0.01,
+    "extractLine": 88,
+    "layoutLine": 3997,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "revenueSources": [
+    {
+      "page": 79,
+      "account": "483001",
+      "label": "Operating Transfer In - Inter",
+      "amount": 17219000,
+      "amountFormatted": "$17.22M",
+      "column": "FY27 Request",
+      "diffPct": 0.01,
+      "extractLine": 86,
+      "layoutLine": 3995,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 79,
+      "account": "431007",
+      "label": "Internal Charges-City Mgr Dept",
+      "amount": 5347695,
+      "amountFormatted": "$5.35M",
+      "column": "FY27 Request",
+      "diffPct": 0.04,
+      "extractLine": 68,
+      "layoutLine": 3977,
+      "document": "FY27 Adopted Supplemental"
+    },
+    null,
+    null
+  ],
+  "expenditureBuckets": [
+    null,
+    null,
+    null
+  ],
+  "didYouKnow": [
+    {
+      "page": 81,
+      "account": "531104",
+      "label": "Snow and Ice Chemical Supplies",
+      "amount": 805000,
+      "amountFormatted": "$805K",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 166,
+      "layoutLine": 4075,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 80,
+      "account": "531121",
+      "label": "Street & Sewer Materials",
+      "amount": 1463732,
+      "amountFormatted": "$1.46M",
+      "column": "FY26 Adopted",
+      "diffPct": 0.26,
+      "extractLine": 136,
+      "layoutLine": 4045,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 80,
+      "account": "531117",
+      "label": "Paint Supplies",
+      "amount": 109580,
+      "amountFormatted": "$110K",
+      "column": "FY27 Request",
+      "diffPct": 0.38,
+      "extractLine": 132,
+      "layoutLine": 4041,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 80,
+      "account": "531120",
+      "label": "Sign & Signal Supplies",
+      "amount": 117668,
+      "amountFormatted": "$118K",
+      "column": "FY27 Request",
+      "diffPct": 0.28,
+      "extractLine": 135,
+      "layoutLine": 4044,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 81,
+      "account": "524102",
+      "label": "City Fleet Rental Charges",
+      "amount": 2180385,
+      "amountFormatted": "$2.18M",
+      "column": "FY27 Request",
+      "diffPct": 0.02,
+      "extractLine": 162,
+      "layoutLine": 4071,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 81,
+      "account": "532100",
+      "label": "Diesel Fuel",
+      "amount": 320000,
+      "amountFormatted": "$320K",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 167,
+      "layoutLine": 4076,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ],
+  "notableChanges": [
+    {
+      "page": 79,
+      "account": "483001",
+      "label": "Operating Transfer In - Inter",
+      "amount": 440000,
+      "amountFormatted": "$440K",
+      "column": "Change",
+      "diffPct": 0,
+      "extractLine": 86,
+      "layoutLine": 3995,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 81,
+      "account": "524102",
+      "label": "City Fleet Rental Charges",
+      "amount": 294988,
+      "amountFormatted": "$295K",
+      "column": "Change",
+      "diffPct": 0,
+      "extractLine": 162,
+      "layoutLine": 4071,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 81,
+      "account": "531104",
+      "label": "Snow and Ice Chemical Supplies",
+      "amount": 72325,
+      "amountFormatted": "$72K",
+      "column": "Change",
+      "diffPct": 0.45,
+      "extractLine": 166,
+      "layoutLine": 4075,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 79,
+      "account": "431007",
+      "label": "Internal Charges-City Mgr Dept",
+      "amount": -398956,
+      "amountFormatted": "$-399K",
+      "column": "Change",
+      "diffPct": 0.01,
+      "extractLine": 68,
+      "layoutLine": 3977,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ]
+}

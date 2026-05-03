@@ -357,7 +357,41 @@ export const DEPARTMENTS = {
       { name: 'Personal', value: 5.39 },
       { name: 'Discretionary', value: 4.81 },
       { name: 'Other', value: 4.94 }
-    ]
+    ],
+    supplementalFY27: {
+      totalExpenditures: 15.15,
+      totalRevenues: 14.65,
+      generalFundGap: 0.50,
+      revenueSources: [
+        { name: 'Solid Waste Collection Fees (residential carts)', value: 11.41 },
+        { name: 'Recycling & Reduction Fees', value: 2.74 },
+        { name: 'Investment Earnings', value: 0.29 },
+        { name: 'Special Assessment Charges', value: 0.10 },
+        { name: 'Snow/Weed Abatement Charges', value: 0.09 },
+        { name: 'Penalties & Recyclable Sales', value: 0.02 }
+      ],
+      expenditureBuckets: [
+        { name: 'People (Personal Services)', value: 5.39, share: 36 },
+        { name: 'Fleet, Fuel & Insurance', value: 4.94, share: 33 },
+        { name: 'Landfill Fees, Materials & Operations', value: 4.81, share: 32 }
+      ],
+      didYouKnow: [
+        { label: 'Landfill Tipping Fees', value: '$2.45M', sub: 'Paid to dispose of collected garbage' },
+        { label: 'City Fleet Charges (routine)', value: '$1.74M', sub: 'Operating cost of garbage trucks' },
+        { label: 'City Fleet Rental Charges', value: '$1.60M', sub: 'Lease cost of the truck fleet itself' },
+        { label: 'Diesel Fuel', value: '$650K', sub: 'Powering the collection routes' },
+        { label: 'Recycling Grants & Contributions', value: '$500K', sub: 'Public education and program funding' },
+        { label: 'Equipment & Cart Replacement', value: '$200K', sub: 'New and replacement carts for residents' }
+      ],
+      notableChanges: [
+        { name: 'Solid Waste Collection Fee Revenue', delta: '+$796K', note: 'cart growth and rate adjustment' },
+        { name: 'Equipment/Furniture/Fixtures', delta: '−$1.00M', note: 'large FY26 cart purchase did not repeat' },
+        { name: 'Personal Services', delta: '+$232K', note: 'wages, benefits, and retirement' },
+        { name: 'Grants & Contributions', delta: '+$173K', note: 'expanded recycling outreach' },
+        { name: 'Landfill Fees', delta: '−$162K', note: 'tonnage projections fine-tuned' },
+        { name: 'City Fleet Rental Charges', delta: '+$132K', note: 'fleet rate change' }
+      ]
+    }
   },
   transit: {
     id: 'transit',
@@ -411,7 +445,40 @@ export const DEPARTMENTS = {
       { name: 'Discretionary', value: 6.04 },
       { name: 'Other', value: 2.22 },
       { name: 'Capital', value: 39.29 }
-    ]
+    ],
+    supplementalFY27: {
+      totalExpenditures: 56.24,
+      totalRevenues: 56.80,
+      generalFundGap: -0.56,
+      revenueSources: [
+        { name: 'Rentals, Parking & Concessions (Other Revenue)', value: 30.10 },
+        { name: 'Federal & State Grants (mostly Capital)', value: 20.14 },
+        { name: 'Charges for Services (PFC, CFC, fuel, terminal)', value: 6.41 },
+        { name: 'Licenses & Permits', value: 0.15 }
+      ],
+      expenditureBuckets: [
+        { name: 'Capital Outlay (buildings, infrastructure, land)', value: 39.29, share: 70 },
+        { name: 'People (Personal Services)', value: 8.70, share: 15 },
+        { name: 'Operations & Discretionary', value: 6.04, share: 11 },
+        { name: 'Utilities, Insurance & Fuel', value: 2.22, share: 4 }
+      ],
+      didYouKnow: [
+        { label: 'Buildings (Capital)', value: '$31.61M', sub: 'Terminal and facility construction' },
+        { label: 'Parking Fees Revenue', value: '$11.26M', sub: 'Largest single revenue source — public parking' },
+        { label: 'Other Improvements', value: '$6.06M', sub: 'Airfield and infrastructure capital' },
+        { label: 'Passenger Facility Charge', value: '$3.51M', sub: 'Per-ticket fee funding airport projects' },
+        { label: 'Advertising & Marketing', value: '$1.24M', sub: 'Promoting CID flights and routes' },
+        { label: 'Runway Maintenance', value: '$260K', sub: 'Crack sealing, joint repair, painting' }
+      ],
+      notableChanges: [
+        { name: 'Capital Outlay', delta: '+$11.58M', note: 'biggest spend increase, +42% for buildings & airfield' },
+        { name: 'Buildings (Capital)', delta: '+$6.52M', note: 'major terminal-area construction year' },
+        { name: 'Federal Capital Revenue', delta: '+$4.53M', note: 'FAA grants funding the capital ramp-up' },
+        { name: 'Land Rental Revenue', delta: '+$2.00M', note: 'new and renegotiated ground leases' },
+        { name: 'Parking Fees Revenue', delta: '+$1.16M', note: 'higher rates and ridership' },
+        { name: 'Property Insurance', delta: '−$209K', note: 'premiums dropped at renewal' }
+      ]
+    }
   },
   agriculturalLands: {
     id: 'agriculturalLands',
@@ -890,7 +957,37 @@ export const DEPARTMENTS = {
       { name: 'Capital Outlay', value: 0 },
       { name: 'Debt Service', value: 6.4 },
       { name: 'Transfers Out - Interfund', value: 0 }
-    ]
+    ],
+    supplementalFY27: {
+      totalExpenditures: 30.14,
+      totalRevenues: 30.14,
+      generalFundGap: 0,
+      revenueSources: [
+        { name: 'Venue Charges for Services (events, F&B, rent)', value: 23.37 },
+        { name: 'Hotel/Motel Tax Transfer In (City subsidy)', value: 6.37 },
+        { name: 'Other Revenue', value: 0.40 }
+      ],
+      expenditureBuckets: [
+        { name: 'Operating & Management (run by Hilton)', value: 22.76, share: 76 },
+        { name: 'Debt Service', value: 6.37, share: 21 },
+        { name: 'Utilities, Insurance & Other', value: 1.00, share: 3 }
+      ],
+      didYouKnow: [
+        { label: 'Hotel/Motel Tax Subsidy', value: '$6.37M', sub: 'City tourist tax fully covers complex debt service' },
+        { label: 'Venue Operating Revenue', value: '$23.37M', sub: 'Tickets, F&B, rentals, hotel rooms' },
+        { label: 'Operating Expenses', value: '$22.76M', sub: 'Run under contract by Doubletree Mgmt (Hilton)' },
+        { label: 'Net Operating Deficit', value: '$400K', sub: 'Convention center + arena both projected to lose money' },
+        { label: 'Debt Service Payment', value: '$6.37M', sub: 'Annual bond repayment on the complex' },
+        { label: 'Personal Services', value: '$0', sub: 'No City employees — venue staff are contractor employees' }
+      ],
+      notableChanges: [
+        { name: 'Hotel/Motel Tax Transfer In', delta: '+$977K', note: 'larger subsidy needed to balance, +18%' },
+        { name: 'Discretionary (Operating) Expenses', delta: '+$804K', note: 'higher operating costs at venues' },
+        { name: 'Other Revenue', delta: '+$400K', note: 'returning miscellaneous revenue line' },
+        { name: 'Other Expenses (utilities, insurance)', delta: '−$65K', note: 'small dip in fixed overhead' },
+        { name: 'Debt Service', delta: '+$26K', note: 'essentially flat year-over-year' }
+      ]
+    }
   },
   downtownDistrict: {
     id: 'downtownDistrict',
@@ -1015,7 +1112,42 @@ export const DEPARTMENTS = {
       { name: 'Rental of Land & Buildings', value: 0.4 },
       { name: 'Retirement Contribution', value: 0.3 },
       { name: 'Social Security Contributions', value: 0.2 }
-    ]
+    ],
+    supplementalFY27: {
+      totalExpenditures: 21.78,
+      totalRevenues: 21.79,
+      generalFundGap: -0.02,
+      revenueSources: [
+        { name: 'Internal Charges to City Departments', value: 19.78 },
+        { name: 'Contributions & Donations (dept buy-ins)', value: 1.02 },
+        { name: 'Local Govt Grants & Reimbursements', value: 0.41 },
+        { name: 'External Department Charges', value: 0.31 },
+        { name: 'Damage Recoveries', value: 0.15 },
+        { name: 'Investment Earnings', value: 0.10 }
+      ],
+      expenditureBuckets: [
+        { name: 'Capital Outlay (vehicle & equipment purchases)', value: 7.88, share: 36 },
+        { name: 'Fuel, Insurance & Facility Charges', value: 5.09, share: 23 },
+        { name: 'Parts, Software & Operations', value: 4.72, share: 22 },
+        { name: 'People (Personal Services)', value: 4.09, share: 19 }
+      ],
+      didYouKnow: [
+        { label: 'Vehicles, Equipment & Software', value: '$7.76M', sub: 'New fleet purchases for City departments' },
+        { label: 'Vehicle & Rolling Equip Parts', value: '$3.02M', sub: 'Inventory of repair parts kept on hand' },
+        { label: 'Diesel Fuel', value: '$2.75M', sub: 'Charged back to departments by gallon' },
+        { label: 'Gasoline Fuel', value: '$1.36M', sub: 'Powering light-duty fleet citywide' },
+        { label: 'Outsourced Vehicle Service', value: '$1.40M', sub: 'Specialty repairs sent to vendors' },
+        { label: 'Mechanic Rate', value: '$90.20/hr', sub: 'Up from $88/hr — covers shop overhead' }
+      ],
+      notableChanges: [
+        { name: 'Diesel Fuel', delta: '+$777K', note: 'higher projected usage and rates' },
+        { name: 'Vehicle & Rolling Equip Parts', delta: '+$500K', note: 'inventory rebuild for fleet repairs' },
+        { name: 'Capital Outlay (Vehicles)', delta: '+$457K', note: '$7.8M planned purchases this year' },
+        { name: 'Internal Charges Revenue', delta: '+$1.36M', note: 'departments paying more in lease/maint' },
+        { name: 'Computer Software', delta: '+$50K', note: 'fleet management system upgrade' },
+        { name: 'Equipment/Furniture/Fixtures', delta: '−$183K', note: 'one-time FY26 shop equipment did not repeat' }
+      ]
+    }
   },
   gatewayMaintenance: {
     id: 'gatewayMaintenance',
@@ -1351,7 +1483,41 @@ export const DEPARTMENTS = {
       { name: 'Legal Services', value: 0.3 },
       { name: 'Workers\' Compensation', value: 0.2 },
       { name: 'Other Employee Benefits', value: 0.2 }
-    ]
+    ],
+    supplementalFY27: {
+      totalExpenditures: 47.15,
+      totalRevenues: 47.15,
+      generalFundGap: 0,
+      revenueSources: [
+        { name: 'Insurance Premiums (paid in by departments)', value: 33.68 },
+        { name: 'Internal Charges – Workers\' Comp', value: 6.14 },
+        { name: 'Stop-Loss & Other Misc Recoveries', value: 3.17 },
+        { name: 'Charges to Commissions & Mgmt Co.', value: 1.99 },
+        { name: 'External Department Charges', value: 1.33 },
+        { name: 'Investment Earnings', value: 0.84 }
+      ],
+      expenditureBuckets: [
+        { name: 'Health Fund (employee health claims)', value: 36.07, share: 76 },
+        { name: 'Property, Liability & Settlements', value: 7.92, share: 17 },
+        { name: 'Professional Services & Operations', value: 3.16, share: 7 }
+      ],
+      didYouKnow: [
+        { label: 'Health Services', value: '$36.07M', sub: 'Citywide employee health-claim payouts' },
+        { label: 'Property Insurance', value: '$4.59M', sub: 'Coverage for City buildings and assets' },
+        { label: 'Other Professional Services', value: '$1.83M', sub: 'TPAs, brokers, claims adjusters' },
+        { label: 'Settlement Budget', value: '$1.10M', sub: 'Reserve for liability claim resolutions' },
+        { label: 'Liability Insurance', value: '$871K', sub: 'Coverage above the City\'s self-insured retention' },
+        { label: 'Legal Services', value: '$250K', sub: 'Outside counsel for complex claims' }
+      ],
+      notableChanges: [
+        { name: 'Health Services', delta: '+$1.20M', note: 'rising health-care costs, +3%' },
+        { name: 'Insurance Premiums Revenue', delta: '+$1.43M', note: 'departments pay more into the funds' },
+        { name: 'Property Insurance', delta: '−$1.18M', note: 'premium decrease at renewal' },
+        { name: 'Settlement Budget', delta: '−$435K', note: 'right-sized to recent claim experience' },
+        { name: 'Liability Insurance', delta: '+$120K', note: 'rate increase on liability coverage' },
+        { name: 'Internal Workers\' Comp Charges', delta: '−$1.04M', note: 'lower charges back to departments' }
+      ]
+    }
   },
   sanitarySewer: {
     id: 'sanitarySewer',

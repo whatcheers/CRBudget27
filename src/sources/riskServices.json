@@ -1,0 +1,246 @@
+{
+  "deptId": "riskServices",
+  "document": "FY27 Adopted Supplemental",
+  "pdf": "book/fy27-adopted/FY27_Adopted_Supplemental.pdf",
+  "extract": "book/extracted/FY27_risk_supplemental.txt",
+  "totalExpenditures": {
+    "page": 95,
+    "account": null,
+    "label": "Total Expenditures",
+    "amount": 47150085,
+    "amountFormatted": "$47.15M",
+    "column": "FY27 Request",
+    "diffPct": 0,
+    "extractLine": 86,
+    "layoutLine": 4766,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "totalRevenues": {
+    "page": 94,
+    "account": null,
+    "label": "Total Revenues",
+    "amount": 47150085,
+    "amountFormatted": "$47.15M",
+    "column": "FY27 Request",
+    "diffPct": 0,
+    "extractLine": 31,
+    "layoutLine": 4711,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "revenueSources": [
+    {
+      "page": 94,
+      "account": "471006",
+      "label": "Insurance Premiums",
+      "amount": 33676164,
+      "amountFormatted": "$33.68M",
+      "column": "FY27 Request",
+      "diffPct": 0.01,
+      "extractLine": 25,
+      "layoutLine": 4705,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 94,
+      "account": "431007",
+      "label": "Internal Charges-City Mgr Dept",
+      "amount": 6137808,
+      "amountFormatted": "$6.14M",
+      "column": "FY27 Request",
+      "diffPct": 0.04,
+      "extractLine": 14,
+      "layoutLine": 4694,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 94,
+      "account": "471005",
+      "label": "Other Miscellaneous Revenue",
+      "amount": 3168288,
+      "amountFormatted": "$3.17M",
+      "column": "FY27 Request",
+      "diffPct": 0.05,
+      "extractLine": 24,
+      "layoutLine": 4704,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 94,
+      "account": "431011",
+      "label": "Charges to Commission, Mgmt Co",
+      "amount": 1985308,
+      "amountFormatted": "$1.99M",
+      "column": "FY27 Request",
+      "diffPct": 0.24,
+      "extractLine": 15,
+      "layoutLine": 4695,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 94,
+      "account": "431012",
+      "label": "Dept Charges-External to City",
+      "amount": 1329433,
+      "amountFormatted": "$1.33M",
+      "column": "FY27 Request",
+      "diffPct": 0.04,
+      "extractLine": 16,
+      "layoutLine": 4696,
+      "document": "FY27 Adopted Supplemental"
+    },
+    null
+  ],
+  "expenditureBuckets": [
+    null,
+    null,
+    null
+  ],
+  "didYouKnow": [
+    {
+      "page": 95,
+      "account": "521106",
+      "label": "Health Services",
+      "amount": 36069596,
+      "amountFormatted": "$36.07M",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 70,
+      "layoutLine": 4750,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 95,
+      "account": "525107",
+      "label": "Property Insurance",
+      "amount": 4590160,
+      "amountFormatted": "$4.59M",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 76,
+      "layoutLine": 4756,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 94,
+      "account": "521108",
+      "label": "Other Professional Services",
+      "amount": 1830212,
+      "amountFormatted": "$1.83M",
+      "column": "FY27 Request",
+      "diffPct": 0.01,
+      "extractLine": 41,
+      "layoutLine": 4721,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 94,
+      "account": "542105",
+      "label": "Settlement",
+      "amount": 1100000,
+      "amountFormatted": "$1.10M",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 60,
+      "layoutLine": 4740,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 95,
+      "account": "525104",
+      "label": "Liability Insurance",
+      "amount": 870795,
+      "amountFormatted": "$871K",
+      "column": "FY27 Request",
+      "diffPct": 0.02,
+      "extractLine": 75,
+      "layoutLine": 4755,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 94,
+      "account": "521107",
+      "label": "Legal Services",
+      "amount": 250000,
+      "amountFormatted": "$250K",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 40,
+      "layoutLine": 4720,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ],
+  "notableChanges": [
+    {
+      "page": 95,
+      "account": "521106",
+      "label": "Health Services",
+      "amount": 1198878,
+      "amountFormatted": "$1.20M",
+      "column": "Change",
+      "diffPct": 0.09,
+      "extractLine": 70,
+      "layoutLine": 4750,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 94,
+      "account": "471006",
+      "label": "Insurance Premiums",
+      "amount": 1425605,
+      "amountFormatted": "$1.43M",
+      "column": "Change",
+      "diffPct": 0.31,
+      "extractLine": 25,
+      "layoutLine": 4705,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 95,
+      "account": "525107",
+      "label": "Property Insurance",
+      "amount": -1178840,
+      "amountFormatted": "$-1.18M",
+      "column": "Change",
+      "diffPct": 0.1,
+      "extractLine": 76,
+      "layoutLine": 4756,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 94,
+      "account": "542105",
+      "label": "Settlement",
+      "amount": -435462,
+      "amountFormatted": "$-435K",
+      "column": "Change",
+      "diffPct": 0.11,
+      "extractLine": 60,
+      "layoutLine": 4740,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 95,
+      "account": "525104",
+      "label": "Liability Insurance",
+      "amount": 119795,
+      "amountFormatted": "$120K",
+      "column": "Change",
+      "diffPct": 0.17,
+      "extractLine": 75,
+      "layoutLine": 4755,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 94,
+      "account": "431007",
+      "label": "Internal Charges-City Mgr Dept",
+      "amount": -1040554,
+      "amountFormatted": "$-1.04M",
+      "column": "Change",
+      "diffPct": 0.05,
+      "extractLine": 14,
+      "layoutLine": 4694,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "deptId": "fleetServices",
+  "document": "FY27 Adopted Supplemental",
+  "pdf": "book/fy27-adopted/FY27_Adopted_Supplemental.pdf",
+  "extract": "book/extracted/FY27_fleet_supplemental.txt",
+  "totalExpenditures": {
+    "page": 91,
+    "account": null,
+    "label": "Total Expenditures",
+    "amount": 21776975,
+    "amountFormatted": "$21.78M",
+    "column": "FY27 Request",
+    "diffPct": 0.01,
+    "extractLine": 105,
+    "layoutLine": 4576,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "totalRevenues": {
+    "page": 90,
+    "account": null,
+    "label": "Total Revenues",
+    "amount": 21794439,
+    "amountFormatted": "$21.79M",
+    "column": "FY27 Request",
+    "diffPct": 0.02,
+    "extractLine": 33,
+    "layoutLine": 4504,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "revenueSources": [
+    {
+      "page": 90,
+      "account": "431007",
+      "label": "Internal Charges-City Mgr Dept",
+      "amount": 19776577,
+      "amountFormatted": "$19.78M",
+      "column": "FY27 Request",
+      "diffPct": 0.02,
+      "extractLine": 14,
+      "layoutLine": 4485,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 90,
+      "account": "471002",
+      "label": "Contributions & Donations",
+      "amount": 1022326,
+      "amountFormatted": "$1.02M",
+      "column": "FY27 Request",
+      "diffPct": 0.23,
+      "extractLine": 24,
+      "layoutLine": 4495,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 90,
+      "account": "423000",
+      "label": "Local Govt Grants and Reimb",
+      "amount": 412187,
+      "amountFormatted": "$412K",
+      "column": "FY27 Request",
+      "diffPct": 0.53,
+      "extractLine": 11,
+      "layoutLine": 4482,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 90,
+      "account": "431012",
+      "label": "Dept Charges-External to City",
+      "amount": 308209,
+      "amountFormatted": "$308K",
+      "column": "FY27 Request",
+      "diffPct": 0.58,
+      "extractLine": 16,
+      "layoutLine": 4487,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 90,
+      "account": "471004",
+      "label": "Damage Recoveries",
+      "amount": 150000,
+      "amountFormatted": "$150K",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 25,
+      "layoutLine": 4496,
+      "document": "FY27 Adopted Supplemental"
+    },
+    null
+  ],
+  "expenditureBuckets": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "didYouKnow": [
+    {
+      "page": 91,
+      "account": "554000",
+      "label": "Vehicles, Equipment, Software",
+      "amount": 7760620,
+      "amountFormatted": "$7.76M",
+      "column": "FY27 Request",
+      "diffPct": 0.01,
+      "extractLine": 99,
+      "layoutLine": 4570,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 91,
+      "account": "533102",
+      "label": "Vehicle & Rolling Equip Parts",
+      "amount": 3017760,
+      "amountFormatted": "$3.02M",
+      "column": "FY27 Request",
+      "diffPct": 0.07,
+      "extractLine": 77,
+      "layoutLine": 4548,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 91,
+      "account": "532100",
+      "label": "Diesel Fuel",
+      "amount": 2746560,
+      "amountFormatted": "$2.75M",
+      "column": "FY27 Request",
+      "diffPct": 0.13,
+      "extractLine": 93,
+      "layoutLine": 4564,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 91,
+      "account": "532101",
+      "label": "Gasoline Fuel",
+      "amount": 1359530,
+      "amountFormatted": "$1.36M",
+      "column": "FY27 Request",
+      "diffPct": 0.03,
+      "extractLine": 94,
+      "layoutLine": 4565,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 90,
+      "account": "522106",
+      "label": "Vehicles & Rolling Equip Serv",
+      "amount": 1400000,
+      "amountFormatted": "$1.40M",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 53,
+      "layoutLine": 4524,
+      "document": "FY27 Adopted Supplemental"
+    },
+    null
+  ],
+  "notableChanges": [
+    {
+      "page": 91,
+      "account": "532100",
+      "label": "Diesel Fuel",
+      "amount": 776546,
+      "amountFormatted": "$777K",
+      "column": "Change",
+      "diffPct": 0.06,
+      "extractLine": 93,
+      "layoutLine": 4564,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 91,
+      "account": "533102",
+      "label": "Vehicle & Rolling Equip Parts",
+      "amount": 500000,
+      "amountFormatted": "$500K",
+      "column": "Change",
+      "diffPct": 0,
+      "extractLine": 77,
+      "layoutLine": 4548,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 91,
+      "account": "554000",
+      "label": "Vehicles, Equipment, Software",
+      "amount": 456674,
+      "amountFormatted": "$457K",
+      "column": "Change",
+      "diffPct": 0.07,
+      "extractLine": 99,
+      "layoutLine": 4570,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 90,
+      "account": "431007",
+      "label": "Internal Charges-City Mgr Dept",
+      "amount": 1357490,
+      "amountFormatted": "$1.36M",
+      "column": "Change",
+      "diffPct": 0.18,
+      "extractLine": 14,
+      "layoutLine": 4485,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 90,
+      "account": "522101",
+      "label": "Computer Software",
+      "amount": 50000,
+      "amountFormatted": "$50K",
+      "column": "Change",
+      "diffPct": 0,
+      "extractLine": 49,
+      "layoutLine": 4520,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 90,
+      "account": "531109",
+      "label": "Equipment/Furniture/Fixtures",
+      "amount": -182500,
+      "amountFormatted": "$-182K",
+      "column": "Change",
+      "diffPct": 0.27,
+      "extractLine": 62,
+      "layoutLine": 4533,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "deptId": "parks",
+  "document": "FY27 Adopted Supplemental",
+  "pdf": "book/fy27-adopted/FY27_Adopted_Supplemental.pdf",
+  "extract": "book/extracted/FY27_parks_supplemental.txt",
+  "totalExpenditures": {
+    "page": 73,
+    "account": null,
+    "label": "Total Expenditures",
+    "amount": 13276694,
+    "amountFormatted": "$13.28M",
+    "column": "FY27 Request",
+    "diffPct": 0.02,
+    "extractLine": 154,
+    "layoutLine": 3707,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "totalRevenues": {
+    "page": 71,
+    "account": null,
+    "label": "Total Revenues",
+    "amount": 3614745,
+    "amountFormatted": "$3.61M",
+    "column": "FY27 Request",
+    "diffPct": 0.13,
+    "extractLine": 51,
+    "layoutLine": 3604,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "revenueSources": [
+    null,
+    {
+      "page": 71,
+      "account": "483001",
+      "label": "Operating Transfer In - Inter",
+      "amount": 1229000,
+      "amountFormatted": "$1.23M",
+      "column": "FY26 Adopted",
+      "diffPct": 0.08,
+      "extractLine": 48,
+      "layoutLine": 3601,
+      "document": "FY27 Adopted Supplemental"
+    },
+    null,
+    null
+  ],
+  "expenditureBuckets": [
+    null,
+    null,
+    null
+  ],
+  "didYouKnow": [
+    null,
+    {
+      "page": 71,
+      "account": "431303",
+      "label": "Registration Fees",
+      "amount": 510295,
+      "amountFormatted": "$510K",
+      "column": "FY27 Request",
+      "diffPct": 0.06,
+      "extractLine": 21,
+      "layoutLine": 3574,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 71,
+      "account": "431302",
+      "label": "Concession Sales",
+      "amount": 295110,
+      "amountFormatted": "$295K",
+      "column": "FY27 Request",
+      "diffPct": 0.04,
+      "extractLine": 20,
+      "layoutLine": 3573,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 71,
+      "account": "461001",
+      "label": "Building Rental",
+      "amount": 257327,
+      "amountFormatted": "$257K",
+      "column": "FY27 Request",
+      "diffPct": 0.13,
+      "extractLine": 38,
+      "layoutLine": 3591,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 73,
+      "account": "524102",
+      "label": "City Fleet Rental Charges",
+      "amount": 808770,
+      "amountFormatted": "$809K",
+      "column": "FY27 Request",
+      "diffPct": 0.03,
+      "extractLine": 137,
+      "layoutLine": 3690,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 72,
+      "account": "531125",
+      "label": "Chemical Supplies – Other",
+      "amount": 116138,
+      "amountFormatted": "$116K",
+      "column": "FY26 Adopted",
+      "diffPct": 0.12,
+      "extractLine": 109,
+      "layoutLine": 3662,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ],
+  "notableChanges": [
+    null,
+    {
+      "page": 71,
+      "account": "512100",
+      "label": "Group Insurance",
+      "amount": 207469,
+      "amountFormatted": "$207K",
+      "column": "Change",
+      "diffPct": 0.23,
+      "extractLine": 59,
+      "layoutLine": 3612,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 71,
+      "account": "431302",
+      "label": "Concession Sales",
+      "amount": 38000,
+      "amountFormatted": "$38K",
+      "column": "Change",
+      "diffPct": 0,
+      "extractLine": 20,
+      "layoutLine": 3573,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 73,
+      "account": "524102",
+      "label": "City Fleet Rental Charges",
+      "amount": 32420,
+      "amountFormatted": "$32K",
+      "column": "Change",
+      "diffPct": 1.31,
+      "extractLine": 137,
+      "layoutLine": 3690,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 73,
+      "account": "525107",
+      "label": "Property Insurance",
+      "amount": -64162,
+      "amountFormatted": "$-64K",
+      "column": "Change",
+      "diffPct": 0.25,
+      "extractLine": 139,
+      "layoutLine": 3692,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 71,
+      "account": "512400",
+      "label": "Unemployment Compensation",
+      "amount": 39352,
+      "amountFormatted": "$39K",
+      "column": "FY25 Actual",
+      "diffPct": 0.9,
+      "extractLine": 62,
+      "layoutLine": 3615,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ]
+}

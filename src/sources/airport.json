@@ -1,0 +1,201 @@
+{
+  "deptId": "airport",
+  "document": "FY27 Adopted Supplemental",
+  "pdf": "book/fy27-adopted/FY27_Adopted_Supplemental.pdf",
+  "extract": "book/extracted/FY27_airport_supplemental.txt",
+  "totalExpenditures": {
+    "page": 120,
+    "account": null,
+    "label": "Total Expenditures",
+    "amount": 56240277,
+    "amountFormatted": "$56.24M",
+    "column": "FY27 Request",
+    "diffPct": 0,
+    "extractLine": 158,
+    "layoutLine": 6091,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "totalRevenues": {
+    "page": 118,
+    "account": null,
+    "label": "Total Revenues",
+    "amount": 56797860,
+    "amountFormatted": "$56.80M",
+    "column": "FY27 Request",
+    "diffPct": 0,
+    "extractLine": 56,
+    "layoutLine": 5989,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "revenueSources": [
+    null,
+    {
+      "page": 118,
+      "account": "421003",
+      "label": "Federal Capital",
+      "amount": 18944410,
+      "amountFormatted": "$18.94M",
+      "column": "FY27 Request",
+      "diffPct": 5.94,
+      "extractLine": 13,
+      "layoutLine": 5946,
+      "document": "FY27 Adopted Supplemental"
+    },
+    null,
+    {
+      "page": 118,
+      "account": "411014",
+      "label": "Other Permits",
+      "amount": 151000,
+      "amountFormatted": "$151K",
+      "column": "FY27 Request",
+      "diffPct": 0.67,
+      "extractLine": 9,
+      "layoutLine": 5942,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ],
+  "expenditureBuckets": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "didYouKnow": [
+    {
+      "page": 120,
+      "account": "552000",
+      "label": "Buildings",
+      "amount": 31610111,
+      "amountFormatted": "$31.61M",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 150,
+      "layoutLine": 6083,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 118,
+      "account": "461010",
+      "label": "Parking Fees",
+      "amount": 11259000,
+      "amountFormatted": "$11.26M",
+      "column": "FY27 Request",
+      "diffPct": 0.01,
+      "extractLine": 43,
+      "layoutLine": 5976,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 120,
+      "account": "553000",
+      "label": "Other Improvements to Infrastr",
+      "amount": 6059476,
+      "amountFormatted": "$6.06M",
+      "column": "FY27 Request",
+      "diffPct": 0.01,
+      "extractLine": 151,
+      "layoutLine": 6084,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 118,
+      "account": "432206",
+      "label": "Passenger Facility Charge",
+      "amount": 3512900,
+      "amountFormatted": "$3.51M",
+      "column": "FY27 Request",
+      "diffPct": 0.08,
+      "extractLine": 27,
+      "layoutLine": 5960,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 119,
+      "account": "521100",
+      "label": "Advertising & Marketing",
+      "amount": 1241000,
+      "amountFormatted": "$1.24M",
+      "column": "FY27 Request",
+      "diffPct": 0.08,
+      "extractLine": 77,
+      "layoutLine": 6010,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 119,
+      "account": "533104",
+      "label": "Runway Maintenance",
+      "amount": 260000,
+      "amountFormatted": "$260K",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 120,
+      "layoutLine": 6053,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ],
+  "notableChanges": [
+    null,
+    {
+      "page": 120,
+      "account": "552000",
+      "label": "Buildings",
+      "amount": 6519610,
+      "amountFormatted": "$6.52M",
+      "column": "Change",
+      "diffPct": 0.01,
+      "extractLine": 150,
+      "layoutLine": 6083,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 118,
+      "account": "421003",
+      "label": "Federal Capital",
+      "amount": 4528897,
+      "amountFormatted": "$4.53M",
+      "column": "Change",
+      "diffPct": 0.02,
+      "extractLine": 13,
+      "layoutLine": 5946,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 118,
+      "account": "461000",
+      "label": "Land Rental",
+      "amount": 1997590,
+      "amountFormatted": "$2.00M",
+      "column": "Change",
+      "diffPct": 0.12,
+      "extractLine": 37,
+      "layoutLine": 5970,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 118,
+      "account": "461010",
+      "label": "Parking Fees",
+      "amount": 1159000,
+      "amountFormatted": "$1.16M",
+      "column": "Change",
+      "diffPct": 0.09,
+      "extractLine": 43,
+      "layoutLine": 5976,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 120,
+      "account": "525107",
+      "label": "Property Insurance",
+      "amount": -209228,
+      "amountFormatted": "$-209K",
+      "column": "Change",
+      "diffPct": 0.11,
+      "extractLine": 143,
+      "layoutLine": 6076,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ]
+}

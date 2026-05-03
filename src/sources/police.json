@@ -1,0 +1,200 @@
+{
+  "deptId": "police",
+  "document": "FY27 Adopted Supplemental",
+  "pdf": "book/fy27-adopted/FY27_Adopted_Supplemental.pdf",
+  "extract": "book/extracted/FY27_police_supplemental.txt",
+  "totalExpenditures": {
+    "page": 76,
+    "account": null,
+    "label": "Total Expenditures",
+    "amount": 52428067,
+    "amountFormatted": "$52.43M",
+    "column": "FY27 Request",
+    "diffPct": 0,
+    "extractLine": 135,
+    "layoutLine": 3850,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "totalRevenues": {
+    "page": 74,
+    "account": null,
+    "label": "Total Revenues",
+    "amount": 11888209,
+    "amountFormatted": "$11.89M",
+    "column": "FY27 Request",
+    "diffPct": 0.02,
+    "extractLine": 38,
+    "layoutLine": 3753,
+    "document": "FY27 Adopted Supplemental"
+  },
+  "revenueSources": [
+    {
+      "page": 74,
+      "account": "441002",
+      "label": "Other Fines & Forfeits",
+      "amount": 6280929,
+      "amountFormatted": "$6.28M",
+      "column": "FY27 Request",
+      "diffPct": 0.01,
+      "extractLine": 27,
+      "layoutLine": 3742,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 74,
+      "account": "483001",
+      "label": "Operating Transfer In - Inter",
+      "amount": 4393516,
+      "amountFormatted": "$4.39M",
+      "column": "FY27 Request",
+      "diffPct": 0.08,
+      "extractLine": 36,
+      "layoutLine": 3751,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 74,
+      "account": "423000",
+      "label": "Local Govt Grants and Reimb",
+      "amount": 883780,
+      "amountFormatted": "$884K",
+      "column": "FY27 Request",
+      "diffPct": 0.43,
+      "extractLine": 15,
+      "layoutLine": 3730,
+      "document": "FY27 Adopted Supplemental"
+    },
+    null,
+    null
+  ],
+  "expenditureBuckets": [
+    null,
+    null,
+    null
+  ],
+  "didYouKnow": [
+    {
+      "page": 74,
+      "account": "521108",
+      "label": "Other Professional Services",
+      "amount": 1591090,
+      "amountFormatted": "$1.59M",
+      "column": "FY27 Request",
+      "diffPct": 0.07,
+      "extractLine": 55,
+      "layoutLine": 3770,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 75,
+      "account": "524102",
+      "label": "City Fleet Rental Charges",
+      "amount": 1324141,
+      "amountFormatted": "$1.32M",
+      "column": "FY27 Request",
+      "diffPct": 0.31,
+      "extractLine": 115,
+      "layoutLine": 3830,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 74,
+      "account": "522101",
+      "label": "Computer Software",
+      "amount": 488239,
+      "amountFormatted": "$488K",
+      "column": "FY27 Request",
+      "diffPct": 0.05,
+      "extractLine": 59,
+      "layoutLine": 3774,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 75,
+      "account": "525108",
+      "label": "Vehicle Insurance",
+      "amount": 394340,
+      "amountFormatted": "$394K",
+      "column": "FY27 Request",
+      "diffPct": 0.09,
+      "extractLine": 118,
+      "layoutLine": 3833,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 75,
+      "account": "532101",
+      "label": "Gasoline Fuel",
+      "amount": 380000,
+      "amountFormatted": "$380K",
+      "column": "FY27 Request",
+      "diffPct": 0,
+      "extractLine": 120,
+      "layoutLine": 3835,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 75,
+      "account": "531100",
+      "label": "Ammunition, Targets, & Firearm",
+      "amount": 110202,
+      "amountFormatted": "$110K",
+      "column": "FY26 Adopted",
+      "diffPct": 0.18,
+      "extractLine": 75,
+      "layoutLine": 3790,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ],
+  "notableChanges": [
+    {
+      "page": 74,
+      "account": "441002",
+      "label": "Other Fines & Forfeits",
+      "amount": 1810526,
+      "amountFormatted": "$1.81M",
+      "column": "Change",
+      "diffPct": 0.03,
+      "extractLine": 27,
+      "layoutLine": 3742,
+      "document": "FY27 Adopted Supplemental"
+    },
+    null,
+    {
+      "page": 74,
+      "account": "521108",
+      "label": "Other Professional Services",
+      "amount": 369473,
+      "amountFormatted": "$369K",
+      "column": "Change",
+      "diffPct": 0.13,
+      "extractLine": 55,
+      "layoutLine": 3770,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 75,
+      "account": "524102",
+      "label": "City Fleet Rental Charges",
+      "amount": -430662,
+      "amountFormatted": "$-431K",
+      "column": "Change",
+      "diffPct": 0.08,
+      "extractLine": 115,
+      "layoutLine": 3830,
+      "document": "FY27 Adopted Supplemental"
+    },
+    {
+      "page": 75,
+      "account": "521106",
+      "label": "Health Services",
+      "amount": -106357,
+      "amountFormatted": "$-106K",
+      "column": "Change",
+      "diffPct": 0.34,
+      "extractLine": 108,
+      "layoutLine": 3823,
+      "document": "FY27 Adopted Supplemental"
+    }
+  ]
+}
