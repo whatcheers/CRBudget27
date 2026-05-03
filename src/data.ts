@@ -304,7 +304,42 @@ export const DEPARTMENTS = {
       { name: 'Discretionary', value: 13.88 },
       { name: 'Other & Debt', value: 20.88 },
       { name: 'Capital', value: 48.06 }
-    ]
+    ],
+    supplementalFY27: {
+      totalExpenditures: 99.27,
+      totalRevenues: 92.16,
+      generalFundGap: 7.11,
+      revenueSources: [
+        { name: 'Water Sales — Volumetric (usage)', value: 38.11 },
+        { name: 'Water Sales — Service Charge (fixed)', value: 14.86 },
+        { name: 'State Revolving Fund (SRF) Loan Proceeds', value: 28.00 },
+        { name: 'Revenue Bond Proceeds', value: 4.30 },
+        { name: 'Wholesale & Misc. Service Charges', value: 4.50 },
+        { name: 'Interest, Penalties & Other', value: 2.39 }
+      ],
+      expenditureBuckets: [
+        { name: 'Capital Infrastructure (NW Plant, mains, ASR well)', value: 47.95, share: 48 },
+        { name: 'Debt Service & Other', value: 23.17, share: 23 },
+        { name: 'People (Personal Services)', value: 14.27, share: 14 },
+        { name: 'Operations, Chemicals & Power', value: 13.88, share: 14 }
+      ],
+      didYouKnow: [
+        { label: 'Treatment Chemicals', value: '$4.13M', sub: 'Lime, fluoride, chlorine and other water-treatment chemicals' },
+        { label: 'Electricity to Run Plants', value: '$3.10M', sub: 'Power to lift, treat and pump 42M gallons/day' },
+        { label: 'NW Treatment Plant Expansion', value: '$28M', sub: 'Largest single capital line — funded by SRF loan' },
+        { label: 'Aquifer Storage & Recovery Well', value: '$6M', sub: 'New drought-resilience storage well in capital plan' },
+        { label: 'Bond Principal Repayment', value: '$6.24M', sub: 'Annual paydown on existing revenue bonds' },
+        { label: 'Service Charge Increase', value: '+6%', sub: 'Daily fixed charge per meter rises in FY27' }
+      ],
+      notableChanges: [
+        { name: 'Capital Infrastructure Spending', delta: '+$36.0M', note: 'NW Water Treatment Plant expansion ramps up' },
+        { name: 'SRF Loan Proceeds', delta: '+$25.5M', note: 'matching draw against the NW plant build-out' },
+        { name: 'Volumetric Water Sales', delta: '+$2.83M', note: 'rate adjustment + steady demand growth' },
+        { name: 'Other Professional Services', delta: '+$1.68M', note: 'utility-billing system work + tank rehab studies' },
+        { name: 'Service Charge Revenue', delta: '+$1.06M', note: '6% increase to the daily fixed meter charge' },
+        { name: 'Meter Replacement Spend', delta: '−$800K', note: 'multi-year meter program rolling off peak' }
+      ]
+    }
   },
   wpc: {
     id: 'wpc',
