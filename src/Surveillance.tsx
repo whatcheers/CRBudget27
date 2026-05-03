@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import {
   ArrowLeft,
   Eye,
+  Megaphone,
 } from 'lucide-react';
 import {
   BarChart,
@@ -137,6 +138,20 @@ const lprBudgetQuotes = [
     context: 'Police-section detail. Reveals total Police software-subs = $368K, of which $225K is LPR-specific.',
   },
 ];
+
+// Cedar Rapids elected officials — verified 2026-05-03 from cedar-rapids.org
+const councilMembers = [
+  { role: 'Mayor', name: "Tiffany O'Donnell", email: 't.odonnell@cedar-rapids.org' },
+  { role: 'At-Large', name: 'Tyler Olson', email: 't.olson@cedar-rapids.org' },
+  { role: 'At-Large', name: 'Ann Poe', email: 'ann.poe@cedar-rapids.org' },
+  { role: 'At-Large', name: 'David Maier', email: 'd.maier@cedar-rapids.org' },
+  { role: 'District 1', name: 'Martin Hoeger', email: 'm.hoeger@cedar-rapids.org' },
+  { role: 'District 2', name: 'Scott Overland', email: 's.overland@cedar-rapids.org' },
+  { role: 'District 3', name: 'Dale Todd', email: 'd.todd@cedar-rapids.org' },
+  { role: 'District 4', name: 'Scott Olson', email: 'scott.olson@cedar-rapids.org' },
+  { role: 'District 5', name: 'Ashley Vanorny', email: 'a.vanorny@cedar-rapids.org' },
+];
+const allCouncilEmails = councilMembers.map((m) => m.email).join(',');
 
 const fmtUSD = (n: number) => `$${n.toLocaleString()}`;
 
@@ -756,6 +771,81 @@ export default function Surveillance({ onBack }: Props) {
           <p className="text-xs text-slate-500 mt-4">Source: EyesOffCR blog research</p>
         </Card>
 
+        {/* What can I do about this? */}
+        <Card>
+          <SectionHeader
+            icon={Megaphone}
+            title="What Can I Do About This?"
+            subtitle="Concrete next steps for residents who want to push back"
+          />
+          <div className="space-y-6">
+
+            <div className="grid md:grid-cols-2 gap-4">
+              <a
+                href="https://www.eyesoffcr.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block border border-red-200 bg-red-50/40 rounded-2xl p-5 hover:bg-red-50 hover:border-red-300 transition-colors"
+              >
+                <p className="text-[10px] font-bold uppercase tracking-widest text-red-700 mb-2">Learn more</p>
+                <p className="font-bold text-slate-900 mb-1">eyesoffcr.org</p>
+                <p className="text-sm text-slate-700">The local research and advocacy group whose investigative work backs much of this page. Background, source documents, and ongoing coverage of CRPD's surveillance program.</p>
+              </a>
+              <a
+                href="https://www.eyesoffcr.org/council_watch.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block border border-red-200 bg-red-50/40 rounded-2xl p-5 hover:bg-red-50 hover:border-red-300 transition-colors"
+              >
+                <p className="text-[10px] font-bold uppercase tracking-widest text-red-700 mb-2">Watch council</p>
+                <p className="font-bold text-slate-900 mb-1">Council meetings &amp; agendas</p>
+                <p className="text-sm text-slate-700">EyesOffCR's curated council-watch page — upcoming agendas, meeting schedules, and a guide to public comment.</p>
+              </a>
+            </div>
+
+            <div>
+              <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2 mb-3">
+                <div>
+                  <p className="font-bold text-slate-900">Email your city council</p>
+                  <p className="text-sm text-slate-600">Tell them what you think about the Flock contract — renewal is on the calendar.</p>
+                </div>
+                <a
+                  href={`mailto:${allCouncilEmails}`}
+                  className="inline-flex items-center justify-center rounded-xl bg-red-700 hover:bg-red-800 text-white text-sm font-bold px-4 py-2 transition-colors"
+                >
+                  Email all council members
+                </a>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                {councilMembers.map((m, idx) => (
+                  <a
+                    key={idx}
+                    href={`mailto:${m.email}`}
+                    className="block border border-slate-200 bg-slate-50 rounded-xl p-4 hover:bg-white hover:border-red-300 transition-colors"
+                  >
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-red-700 mb-1">{m.role}</p>
+                    <p className="font-bold text-slate-900">{m.name}</p>
+                    <p className="text-xs text-slate-600 break-all underline decoration-dotted">{m.email}</p>
+                  </a>
+                ))}
+              </div>
+              <p className="text-xs text-slate-500 mt-3">Source: cedar-rapids.org official council pages, verified 2026-05-03.</p>
+            </div>
+
+            <a
+              href="https://discord.gg/VEeNY5x6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block border border-slate-200 bg-slate-50 rounded-2xl p-5 hover:bg-white hover:border-red-300 transition-colors"
+            >
+              <p className="text-[10px] font-bold uppercase tracking-widest text-slate-600 mb-2">Wanna chat about it?</p>
+              <p className="font-bold text-slate-900 mb-1">CedarRapids Discord</p>
+              <p className="text-sm text-slate-700">EyesOffCR is usually shitposting in the CedarRapids Discord — drop in to ask questions or organize.</p>
+              <p className="text-xs text-slate-500 mt-2 underline decoration-dotted">discord.gg/VEeNY5x6</p>
+            </a>
+
+          </div>
+        </Card>
 
       </main>
     </motion.div>
